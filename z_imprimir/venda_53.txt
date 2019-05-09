@@ -1,0 +1,23 @@
+       SHEIK ESFIHARIA E PIZZARIA
+   DR. ANTONIO TEDESCO, 822 - CENTRO
+          FONE: (14) 3264-3494
+----------------------------------------
+               VENDA: #53
+          09/05/2019 AS 16:00
+----------------------------------------
+Qtd Produto                 V. UN  Total
+----------------------------------------
+01   AQUARIO                            
+                            40,00  40,00
+----------------------------------------
+SUBTOTAL                        R$ 40,00
+
+TOTAL A RECEBER (=)             R$ 40,00
+----------------------------------------
+          PAGAMENTOS RECEBIDOS
+----------------------------------------
+DINHEIRO (-)                    R$ 40,00
+TOTAL RECEBIDO:                 R$ 40,00
+RESTANTE A RECEBER:              R$ 0,00
+----------------------------------------
+OPERADOR: MARCIO

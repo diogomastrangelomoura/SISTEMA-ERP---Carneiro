@@ -1,0 +1,76 @@
+html{height:100%; width: 100%}
+body{height:100%; width: 100%; background-position: center center; background-size: cover; background-attachment: fixed;}
+.alerta-index{position: fixed;; top: 0; width: 100%; background-color:#ACE1C1; color:#3C763D; border-top: 0; border-left: 0; border-bottom: 0; border-right: 0; display: none;}
+.alerta-index_erro{position: fixed;; top: 0; width: 100%;  border-top: 0; border-left: 0; border-right: 0; border-bottom:0;  display: none;}
+.upper{text-transform: uppercase;}
+.thin{font-weight: 300}
+.slim-mainpanel{margin-bottom: 50px}
+
+.red{color: #B20000}
+
+span.span_install{color: #3876AD; font-size: 26px; font-weight: 300}
+span.span_install small{color: #3876AD; font-size: 16px; font-weight: 300}
+.loader-instalacao{font-size: 60px; color: #3876AD; line-height: 100px}
+
+.avisos-loja-warning .btn-danger{margin-top: -3px}
+.avisos-loja-warning{border-radius:0; border-top: 0; border-top:0; border-left: 0; border-right: 0; font-size:14px; font-weight: 300; margin-bottom:0px}
+.avisos-loja{border-radius:0; background-color:#ACE1C1; color:#3C763D; border-top:0; border-left: 0; border-right: 0; font-size:14px; font-weight: 300; margin-bottom:0px}
+.avisos-desenvolvedor{border-radius:0; border-top:0; border-left: 0; border-right: 0; font-size:14px; font-weight: 300; margin-bottom:0px}
+
+
+.mascara{position: absolute;; top: 0; width: 100%; height: 100vh; background-color: #000; opacity: .7}
+.top12{margin-top: 12px}
+.top10{margin-top: 10px}
+.bottom10{margin-bottom: 10px}
+.top5{margin-top: 5px}
+.top20{margin-top: 20px}
+.top10{margin-top: 10px}
+.top15{margin-top: 15px}
+.bottom20{margin-bottom: 20px}
+.top30{margin-top: 30px}
+.top40{margin-top: 40px}
+.color_red{color:#B20000}
+
+.btn{font-weight: 300}
+
+.modal-body h5{font-size: 15px; font-weight: 400}
+.hide{display: none;}
+
+.coluna-fixa{ width: 25%; border:1px solid #efefef;}
+.altura_progresso{height: 40px; font-size: 15px; font-weight: 300; -webkit-transition-duration:.5s;}
+
+.tabs{display: none;}
+.tabs:first-child { 
+  display: flex;
+}
+
+
+h15{font-size: 14px; font-weight: 300; text-transform: uppercase; padding-top: 34px}
+h16{font-size: 19px; font-weight: 300; color: #3876AD;}
+h16 strong{font-weight: 400; }
+h17{font-size: 12px; font-weight: 400; text-transform: uppercase; }
+h17 strong{font-weight: 500; }
+h18{font-size: 15px; font-weight: 300; color: #3876AD;}
+h18 strong{font-weight: 400; }
+h19{font-size: 16px; font-weight: 300; color: #3876AD;}
+h19 strong{font-weight: 400; }
+h90{font-size: 35px; font-weight: 300; color: #3876AD;}
+
+h26{font-size: 22px; font-weight: 300; color: #3876AD;}
+h27{font-size: 16px; font-weight: 300; color: #3876AD; 
+  text-transform: uppercase; }
+
+
+.modal-header {
+color:#FFF;
+  padding: 0 ;
+  font-weight: 300;
+  border-bottom: 1px solid #3876AD;
+  background-color:#3876AD;
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}

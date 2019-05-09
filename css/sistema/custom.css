@@ -1,0 +1,49 @@
+body{overflow-x: hidden; }
+#resumo-pedido-comanda{height: calc(100vh - 170px); max-height: calc(100vh - 170px); border-top: 0; font-weight: 300; line-height: 24px}
+
+
+
+.icones-campo i{position: absolute; font-size: 30px; top: 10px; left: 28px}
+.icones-campo2 i{position: absolute; font-size: 20px; top: 14px; left: 20px}
+.icones-campo2 e{position: absolute; font-size: 22px; top: 15px; right: 20px}
+.icones-campo2 f{position: absolute; font-size: 19px; top: 28px; right: 28px}
+
+input:read-only { background-color: red}
+.input-lg{font-weight: 300}
+select.input-lg{font-weight: 300; border-radius: 0}
+select.input-md{font-weight: 300; border-radius: 0; height: 42px}
+select.cent{text-align: center; }
+
+select.padding{padding-left: 50px;  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;}
+
+.grande-botao{height: 60px; font-size: 20px}
+
+h199{color:#215C83; font-weight: 600; font-size: 40px}
+h166{color:#215C83; font-weight: 600; font-size: 30px; line-height: 39px}
+h167{color:#215C83; font-weight: 600; font-size: 44px; line-height: 48px}
+
+.msg-venda{background-color: #4D7AA4; color: #FFF; border:0;}
+.msg-venda:disabled{background-color: #4D7AA4; color: #FFF; border:0;}
+
+#escolhe_produtos_frente{height: calc(100vh - 318px); max-height: calc(100vh - 318px); }
+
+
+
+.efetiva_venda{color: #215C83}
+input.aparencia_campo{background-color: transparent; border: 0; font-weight: 400; font-size: 28px}
+
+input.form-control:focus{background-color: yellow; }
+select.form-control:focus{background-color: yellow; color: #000; box-shadow:none; outline: none; }
+textarea.form-control:focus{background-color: yellow; color: #000; box-shadow:none; outline: none; }
+button:focus{background-color: yellow; color: #000; box-shadow:none; outline: none; }
+input.aparencia_campo:focus{background-color: transparent;}
+input.aparencia_campo:read-only{background-color: transparent;}
+
+span.carregando{color:  #215C83; font-weight: 300; font-size: 17px}
+
+.table-hover{cursor: pointer;}
+tr.passa_selecionado{background-color: #ECECEC}
+
+.icone_deleta_item_pedido{}
