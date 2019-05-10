@@ -49,7 +49,7 @@ require("../../includes/verifica_configuracoes_loja.php");
 	                <a tabindex="-1  href="javascript:void(0)">VALOR RECEBIDO EM DINHEIRO</a>
 	            </div>
 	        	<div class="col-md-4  text-right">
-	        		<input type="text" class="valores form-control text-right input-lg" placeholder="R$ 0.00" onblur="javascript:faz_troco_pgto()" id="pgto_dinheiro_final" name="pgto_dinheiro_final">
+	        		<input type="text" class="valores form-control text-right input-lg" placeholder="R$ 0.00" onblur="javascript:faz_troco_pgto()" id="pgto_dinheiro_final" name="pgto_dinheiro_final" value="0.00">
 	        	</div>            
 	        </div>
 	        <hr>
@@ -62,7 +62,7 @@ require("../../includes/verifica_configuracoes_loja.php");
 	        	<div class="col-md-8 text-right">
 	        		<div class="row row-xs">
 	        			<div class="col-md-6">
-	        				<input type="text" class="valores form-control text-right input-lg" placeholder="R$ 0.00" id="pgto_cartao_final" name="pgto_cartao_final" onblur="javascript:faz_troco_pgto()">
+	        				<input type="text" class="valores form-control text-right input-lg" placeholder="R$ 0.00" id="pgto_cartao_final" name="pgto_cartao_final" onblur="javascript:faz_troco_pgto()" value="0.00">
 	        			</div>	
 	        			<div class="col-md-6">
 
@@ -96,7 +96,7 @@ require("../../includes/verifica_configuracoes_loja.php");
 	                <a tabindex="-1  href="javascript:void(0)">VALOR RECEBIDO EM CHEQUE</a>
 	            </div>
 	        	<div class="col-md-4  text-right">
-	        		<input type="text" class="valores form-control text-right input-lg" placeholder="R$ 0.00" id="pgto_cheque_final" name="pgto_cheque_final" onblur="javascript:faz_troco_pgto()">
+	        		<input type="text" class="valores form-control text-right input-lg" placeholder="R$ 0.00" id="pgto_cheque_final" name="pgto_cheque_final" onblur="javascript:faz_troco_pgto()" value="0.00">
 	        	</div>            
 	        </div>
 	        <hr>
@@ -107,7 +107,7 @@ require("../../includes/verifica_configuracoes_loja.php");
 	                <a tabindex="-1  href="javascript:void(0)">VALOR MARCADO NA CONTA DO CLIENTE</a>
 	            </div>
 	        	<div class="col-md-4  text-right">
-	        		<input type="text" class="valores form-control text-right input-lg" placeholder="R$ 0.00" id="pgto_crediario_final" name="pgto_crediario_final" onblur="javascript:faz_troco_pgto()">
+	        		<input type="text" class="valores form-control text-right input-lg" placeholder="R$ 0.00" id="pgto_crediario_final" name="pgto_crediario_final" onblur="javascript:faz_troco_pgto()" value="0.00">
 	        	</div>            
 	        </div>
 	        

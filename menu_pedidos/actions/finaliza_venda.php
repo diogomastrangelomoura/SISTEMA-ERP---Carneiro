@@ -33,13 +33,33 @@ if($tipo_venda==1){
 
 	//PAGAMENTOS DA VENDA CARTAO///
 	if($pgto_cartao_final!='' && $pgto_cartao_final!='0.00'){
-		$grava = $db->select("INSERT INTO pagamentos_vendas (id_venda, forma_pagamento, valor_pagamento, id_usuario, data, hora, id_caixa, forma_cartao) VALUES ('$id_final', '2', '$pgto_cartao_final', '$id_usuario', '$hoje', '$hora', '$id_caixa_aberto', '$tipo_pgto_cartao')");	
+
+		if($valor_final_troco!='' && $valor_final_troco!='0.00' && $valor_final_troco!='0'){
+			if($pgto_dinheiro_final=='0.00' && $pgto_cheque_final=='0.00' && $pgto_crediario_final=='0.00'){
+				$pgto_cartao_final = ($pgto_cartao_final-$valor_final_troco);
+			} else {
+				$valor_final_troco=0;		
+			}			
+		}
+
+		$grava = $db->select("INSERT INTO pagamentos_vendas (troco_passado, id_venda, forma_pagamento, valor_pagamento, id_usuario, data, hora, id_caixa, forma_cartao) VALUES ('$valor_final_troco', '$id_final', '2', '$pgto_cartao_final', '$id_usuario', '$hoje', '$hora', '$id_caixa_aberto', '$tipo_pgto_cartao')");	
 	}
 	
 
 	//PAGAMENTOS DA VENDA CHEQUE///
 	if($pgto_cheque_final!='' && $pgto_cheque_final!='0.00'){
-		$grava = $db->select("INSERT INTO pagamentos_vendas (id_venda, forma_pagamento, valor_pagamento, id_usuario, data, hora, id_caixa) VALUES ('$id_final', '4', '$pgto_cheque_final', '$id_usuario', '$hoje', '$hora', '$id_caixa_aberto')");	
+
+		
+
+		if($valor_final_troco!='' && $valor_final_troco!='0.00' && $valor_final_troco!='0'){
+			if($pgto_dinheiro_final=='0.00' && $pgto_cartao_final=='0.00' && $pgto_crediario_final=='0.00'){
+				$pgto_cheque_final = ($pgto_cheque_final-$valor_final_troco);
+			} else {
+				$valor_final_troco=0;		
+			}			
+		}
+
+		$grava = $db->select("INSERT INTO pagamentos_vendas (troco_passado, id_venda, forma_pagamento, valor_pagamento, id_usuario, data, hora, id_caixa) VALUES ('$valor_final_troco', '$id_final', '4', '$pgto_cheque_final', '$id_usuario', '$hoje', '$hora', '$id_caixa_aberto')");	
 	}
 
 
@@ -80,6 +100,6 @@ if($tipo_venda==1){
 $id_venda = $id_final;
 require_once ("../impressao/prepara_impressao_venda.php");
 
-echo $id_final;	
+//echo $id_final;	
 
 ?>

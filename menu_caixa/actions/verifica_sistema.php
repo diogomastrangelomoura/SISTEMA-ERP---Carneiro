@@ -10,7 +10,7 @@ $selecionax = $db->select("SELECT caixa_compartilhado FROM configuracoes LIMIT 1
 $dados_configuracoes = $db->expand($selecionax);
 
 $and='';
-if($dados_configuracoes==0){
+if($dados_configuracoes['caixa_compartilhado']==0){
 	$and = "AND id_usuario='$id_usuario'";		
 } 
 

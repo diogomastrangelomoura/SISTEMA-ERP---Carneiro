@@ -41,7 +41,7 @@
                 <label>INFORMAR CPF:</label>           
                 <input type="number" autocomplete="off" style="width: 330px; " name="cpf_cliente" id="cpf_cliente" class="form-control input-lg" placeholder="CPF CLIENTE">
                 
-                <button type="button" onclick="javascript:venda_fiscal();" class="btn btn-block btn-lg  btn-primary top10">CONTINUAR</button>
+                <button type="button" onclick="javascript:finaliza_venda(0);" class="btn btn-block btn-lg  btn-primary top10">CONTINUAR</button>
 
             </div> 
 
@@ -233,7 +233,7 @@
 
 
 
-<div id="ModalPerguntaImprime01" class="modal fade" role="dialog" tabindex="-1">
+<div id="ModalPerguntaImprime01" class="modal fade" role="dialog" tabindex="-1" data-keyboard="false" data-backdrop="static">
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -241,7 +241,7 @@
       
       <div class="modal-header">        
         <h4 class="modal-title"><center>Impressão</center></h4>
-        <button type="button" class="close" data-dismiss="modal" tabindex="-1">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" tabindex="-1" style="display: none;">&times;</button>
       </div>
       
         <div class="modal-body" style="min-width: 300px">
@@ -251,7 +251,7 @@
                     <button onclick="javascript:imprime_comprovante_venda();" class="btn btn-lg btn-success btn-block  grandao">SIM</button>               
             </div> 
 
-            <div class="col-md-12 top15">                
+            <div class="col-md-12 top15" style="display: none;">                
                     <button data-dismiss="modal" tabindex="-1" class="btn btn-danger btn-lg btn-block  grandao">NÃO</button>                
             </div> 
 
