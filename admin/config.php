@@ -3,8 +3,8 @@ ob_start();
 @session_start();
 
 define('ROOT_DIR', dirname(__FILE__).'/' );
-define('SISTEMA_DIR', 'http://192.168.0.112/SISTEMA-ERP---Carneiro/');
-define('ADMIN_DIR', 'http://192.168.0.112/SISTEMA-ERP---Carneiro/admin/');
+define('SISTEMA_DIR', 'http://localhost/carneiro/SISTEMA-ERP---Carneiro/');
+define('ADMIN_DIR', 'http://localhost/carneiro/SISTEMA-ERP---Carneiro/admin/');
 	
 
 //CLASSES DE USO
