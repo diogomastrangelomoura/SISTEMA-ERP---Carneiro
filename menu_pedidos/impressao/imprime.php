@@ -6,7 +6,7 @@ require("../../includes/verifica_configuracoes_loja.php");
 if(file_exists("../../z_imprimir/".$arquivo)){
 
 //IMPRESSÃO VENDA OU ORÇAMENTO//
-if($tipo==1){
+//if($tipo==1){
 
 	if(!empty($dados_configuracoes['impressora_principal'])){
 		$printer_principal = $dados_configuracoes['impressora_principal'];
@@ -28,7 +28,7 @@ if($tipo==1){
 		}
 	}
 
-}
+//}
 
 
 $del = $db->select("DELETE FROM arquivos_imprimir WHERE arquivo='$arquivo'");

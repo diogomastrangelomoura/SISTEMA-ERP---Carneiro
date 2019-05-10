@@ -155,7 +155,7 @@ include_once("../../diversos/funcoes_diversas.php");
     $sel = $db->select("SELECT pagamentos_vendas.*, formas_pagamento.forma, usuarios.nome FROM pagamentos_vendas 
 		LEFT JOIN formas_pagamento ON pagamentos_vendas.forma_pagamento=formas_pagamento.id
 	    LEFT JOIN usuarios ON pagamentos_vendas.id_usuario=usuarios.id
-	    WHERE pagamentos_vendas.id_venda='$id_venda'
+	    WHERE pagamentos_vendas.id_venda='$id_venda' AND pagamentos_vendas.forma_pagamento!='3'
 	    ORDER BY pagamentos_vendas.id");
 		
 		if($db->rows($sel)){

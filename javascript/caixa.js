@@ -160,6 +160,6 @@ function finaliza_caixa(){
 		$("#ModalFinalizaCaixa").modal('hide');
 		$("#btn_fecha_caixa").html('CONFIRMAR');		
 		imprime_fechamento_caixa(resposta);	
-		location.reload();			
+		inicia_sistema();
 	});	
 }

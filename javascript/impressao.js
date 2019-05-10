@@ -49,7 +49,7 @@ function reimprime_comp_pgto_crediario(id){
 
 
 function imprime_fechamento_caixa(id){	
-	$.post('menu_caixa/impressao/prepara_fechamento_caixa.php',{id_caixa:id}, function(resposta){			
+	$.post('menu_caixa/impressao/prepara_fechamento_caixa.php',{id_caixa:id}, function(resposta){		
 		imprime_comprovante_venda();
 	});	
 }

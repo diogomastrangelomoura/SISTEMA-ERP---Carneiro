@@ -133,7 +133,7 @@ require("../../menu_caixa/actions/totalizadores_caixa.php");
    $arquivo = 'fechamento_caixa_'.md5(time()).'.txt';		
    $file = '../../z_imprimir/'.$arquivo;
 
-   $insere = $db->select("INSERT INTO arquivos_imprimir (arquivo, tipo) VALUES ('$arquivo', '99')");	
+   $insere = $db->select("INSERT INTO arquivos_imprimir (arquivo, tipo) VALUES ('$arquivo', '1')");	
 
    // cria o arquivo
    $_file  = fopen($file,"w");
