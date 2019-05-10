@@ -3,6 +3,7 @@ require("../../admin/class/class.db.php");
 require("../../admin/class/class.seguranca.php");
 require("../../includes/verifica_configuracoes_loja.php");
 
+if(file_exists("../../z_imprimir/".$arquivo)){
 
 //IMPRESSÃO VENDA OU ORÇAMENTO//
 if($tipo==1){
@@ -35,6 +36,11 @@ $del = $db->select("DELETE FROM arquivos_imprimir WHERE arquivo='$arquivo'");
 if(file_exists("../../z_imprimir/".$arquivo)) {
   unlink("../../z_imprimir/".$arquivo);
 } 
+
+
+} else {
+	$del = $db->select("DELETE FROM arquivos_imprimir WHERE arquivo='$arquivo'");	
+}
 
 echo 1;
 

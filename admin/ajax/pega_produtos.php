@@ -4,7 +4,7 @@ require ("../class/class.db.php");
 require ("../class/class.seguranca.php");
 
 
-	$sel = $db->select("SELECT * FROM lanches WHERE categoria='$categoria' ORDER BY produto");
+	$sel = $db->select("SELECT * FROM produtos WHERE categoria='$categoria' ORDER BY produto");
 
 		if($db->rows($sel)){
 			

@@ -4,8 +4,7 @@
   $sql = $db->select("SELECT * FROM configuracoes");  
   $ln = $db->expand($sql);
 
-  $sql2 = $db->select("SELECT * FROM mesas");  
-  $ln2 = $db->expand($sql2);
+
 ?>
 
 <div class="slim-pageheader">
@@ -35,35 +34,10 @@
         </div>
 
 
-        <div class="col-md-4">
-           <div class="form-group">
-                <label for="exampleInputEmail1">Quantidade de Mesas</label>
-                <input type="number" class="form-control" name="mesa"  value="<?php echo $ln2['mesa']; ?>"/>
-           </div>
-        </div> 
-
-        <div class="col-md-4">
-           <div class="form-group">
-                <label for="exampleInputEmail1">Escolher motoqueiro ao finalizar pedido?</label>
-                <select class="form-control" name="escolhe_motoqueiro" required="required">
-                    <?php
-                      if($ln['escolhe_motoqueiro']==1){
-                        echo '<option value="1" selected>SIM</option>';
-                        echo '<option value="0">NÃO</option>';
-                      } else {
-                        echo '<option value="0" selected>NÃO</option>';
-                        echo '<option value="1">SIM</option>';                        
-                      }
-                    ?>
-                </select>  
-           </div>
-        </div> 
-       
-
        <div class="col-md-4">
            <div class="form-group">
                 <label for="exampleInputEmail1">Ordem de exibição dos produtos:</label>
-                <select class="form-control" name="ordem_exibicao_produtos" required="required">
+                <select class="form-control sel-gd" name="ordem_exibicao_produtos" required="required">
                     <?php
                       if($ln['ordem_exibicao_produtos']=='' || $ln['ordem_exibicao_produtos']=='codigo'){
                         echo '<option value="codigo" selected>CÓDIGO</option>';
@@ -77,23 +51,6 @@
            </div>
         </div>
 
-
-       <div class="col-md-4">
-           <div class="form-group">
-                <label for="exampleInputEmail1">Exibir Combo de Categorias no Mobile?</label>
-                <select class="form-control" name="categorias_mobile" required="required">
-                    <?php
-                      if($ln['categorias_mobile']==1){
-                        echo '<option value="1" selected>SIM</option>';
-                        echo '<option value="0">NÃO</option>';
-                      } else {
-                        echo '<option value="0" selected>NÃO</option>';
-                        echo '<option value="1">SIM</option>';                        
-                      }
-                    ?>
-                </select>  
-           </div>
-        </div> 
 
 
 

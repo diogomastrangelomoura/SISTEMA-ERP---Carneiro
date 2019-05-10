@@ -2,8 +2,8 @@
 
 
 <div class="slim-pageheader">
-  <a href="novo-cliente"><button type="button" class="btn btn-primary  pull-right">NOVO CLIENTE</button></a>
-  <h6 class="slim-pagetitle">LISTAGEM DE CLIENTES</h6>
+  <a href="novo-fornecedor"><button type="button" class="btn btn-primary  pull-right">NOVO FORNECEDOR</button></a>
+  <h6 class="slim-pagetitle">LISTAGEM DE FORNECEDORES</h6>
 </div><!-- slim-pageheader -->
 
 
@@ -12,7 +12,7 @@
   <div class="card card-table">
   
               <div class="card-header">
-                <h6 class="slim-card-title">CLIENTES CADASTRADOS</h6>
+                <h6 class="slim-card-title">FORNECEDORES CADASTRADOS</h6>
               </div>
               
 
@@ -30,7 +30,7 @@
                   <tbody>
 
                 <?php
-                 $sel = $db->select("SELECT * FROM clientes ORDER BY nome");
+                 $sel = $db->select("SELECT * FROM fornecedores ORDER BY fornecedor");
                 
                 if($db->rows($sel)){
                   $x=1; 
@@ -41,7 +41,7 @@
                     <tr>
                      
                       <td class="valign-middle upper"><?php if($yy['id']<10){echo '0';} echo $yy['id']; ?></td>		
-                      <td class="valign-middle upper"><?php echo $yy['nome']; ?></td>
+                      <td class="valign-middle upper"><?php echo $yy['fornecedor']; ?></td>
                       
                      
                       <td class="valign-middle">                                              
@@ -65,8 +65,8 @@
                         </a>
                         <div class="dropdown-menu">
                           <nav class="nav dropdown-nav">
-                            <a href="clientes/edit/<?php echo $yy['id']; ?>"  class="nav-link"><i class="icon ion-edit"></i> Editar Ítem</a>
-                            <a href="clientes/delete/<?php echo $yy['id']; ?>" class="nav-link"><i class="icon ion-android-delete"></i> Excluir Ítem</a>                            
+                            <a href="fornecedores/edit/<?php echo $yy['id']; ?>"  class="nav-link"><i class="icon ion-edit"></i> Editar Ítem</a>
+                            <a href="fornecedores/delete/<?php echo $yy['id']; ?>" class="nav-link"><i class="icon ion-android-delete"></i> Excluir Ítem</a>                            
                           </nav>
                         </div>
                       </td>

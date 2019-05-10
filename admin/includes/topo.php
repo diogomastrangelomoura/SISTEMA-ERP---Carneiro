@@ -11,7 +11,7 @@ $MensagensSistema = new MensagensDesenvolvedorSistema();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
    
-    <title>RETAGUARDA SIS E-FOOD v<?php echo $dados_sistema['versao']; ?></title>
+    <title>RETAGUARDA SIS ERP v<?php echo $dados_sistema['versao']; ?></title>
 
     <!-- vendor css -->
     <link href="<?php echo ADMIN_DIR; ?>lib/font-awesome/css/font-awesome.css" rel="stylesheet">

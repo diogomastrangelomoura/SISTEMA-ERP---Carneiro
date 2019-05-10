@@ -2,10 +2,14 @@
 
 <?php
 $edit=0;
+$comissao='';
 if(isset($id)){
 	$sql = $db->select("SELECT * FROM usuarios WHERE id='$id' LIMIT 1");	
 	$ln = $db->expand($sql);
 	$edit=1;
+
+
+
 }
 ?>
 
@@ -45,7 +49,7 @@ if(isset($id)){
                   <input class="form-control" type="text"  name="usuario" required="required" value="<?php if($edit==1){ echo $ln['usuario'];} ?>">
                 </div>
               </div><!-- col-4 -->
-              <div class="col-lg-3">
+              <div class="col-lg-2">
                 <div class="form-group">
                   <label class="form-control-label">Senha: <span class="tx-danger">*</span></label>
                   <input class="form-control" type="text" name="senha"  required="required" value="<?php if($edit==1){ echo $ln['senha'];} ?>">
@@ -54,35 +58,40 @@ if(isset($id)){
               
               <div class="col-lg-3">
                 <div class="form-group mg-b-10-force">
-                  <label class="form-control-label">Tipo: <span class="tx-danger">*</span></label>
-                  <select class="form-control select2" name="nivel"  required="required">
+                  <label class="form-control-label">Vendedor: <span class="tx-danger">*</span></label>
+                  <select class="form-control sel-gd select2" name="vendedor"  required="required">
                     	<?php
 	                		if($edit==1){
 	                			
 	                			if($ln['nivel']==1){
-	                				echo '<option value="1" selected>ATENDENDE</option>';
-	                				echo '<option value="3">CAIXA</option>';
-	                			}	
-
-	                			else if($ln['nivel']==3){
-	                				echo '<option value="3" selected>CAIXA</option>';
-	                				echo '<option value="1">ATENDENTE</option>';                				
-	                			}
+	                				echo '<option value="1" selected>SIM</option>';
+	                				echo '<option value="0">NÃO</option>';
+	                			} else {
+                          echo '<option value="1" selected>NÃO</option>';
+                          echo '<option value="0">SIM</option>';
+                        }
 
 	                		} else {
-	                				echo '<option value="">--- escolha o tipo ---</option>';
-	                				echo '<option value="1">ATENDENTE</option>';
-	                				echo '<option value="3">CAIXA</option>';
+	                				echo '<option value="">--- escolha ---</option>';
+	                				echo '<option value="1">SIM</option>';
+	                				echo '<option value="0">NÃO</option>';
 	                		}
                 		?>
                   </select>
                 </div>
               </div><!-- col-4 -->
 
-              <div class="col-lg-3">
+              <div class="col-lg-2">
+                <div class="form-group mg-b-10-force">
+                  <label class="form-control-label">Comissão em %: </label>
+                  <input class="form-control valores" type="text" name="comissao"  required="required" value="<?php if($edit==1){ echo $ln['comissao'];} ?>">
+                </div>
+              </div><!-- col-4 -->
+
+              <div class="col-lg-2">
                 <div class="form-group mg-b-10-force">
                   <label class="form-control-label">Ativo: <span class="tx-danger">*</span></label>
-                  <select class="form-control select2" name="ativo"  required="required">
+                  <select class="form-control sel-gd select2" name="ativo"  required="required">
 	                    <?php
 	                		if($edit==1){
 	                			

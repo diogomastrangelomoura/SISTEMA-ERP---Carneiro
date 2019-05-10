@@ -3,7 +3,7 @@
 <?php
 $edit=0;
 if(isset($id)){
-	$sql = $db->select("SELECT * FROM clientes WHERE id='$id' LIMIT 1");	
+	$sql = $db->select("SELECT * FROM fornecedores WHERE id='$id' LIMIT 1");	
 	$ln = $db->expand($sql);
 	$edit=1;
 }
@@ -12,21 +12,21 @@ if(isset($id)){
 <div class="slim-pageheader">
   <ol class="breadcrumb slim-breadcrumb">
     <li class="breadcrumb-item"><a href="home">HOME</a></li>
-    <li class="breadcrumb-item active" aria-current="page">CLIENTES</li>
+    <li class="breadcrumb-item active" aria-current="page">FORNECEDORES</li>
   </ol>
   <h6 class="slim-pagetitle upper">
   		<?php
   			if($edit==1){
-  				echo $ln['nome'];
+  				echo $ln['fornecedor'];
   			} else {
-  				echo 'NOVO CLIENTE';
+  				echo 'NOVO FORNECEDOR';
   			}
   		?>
   </h6>
 </div>
 
 
-<form method="post" action="clientes/save">
+<form method="post" action="controlers/cadastros/salva_fornecedor.php">
 <div class="section-wrapper">
   		
 		<input class="form-control" type="hidden" name="id" value="<?php if($edit==1){ echo $id;} else {echo 0;} ?>">
@@ -43,12 +43,22 @@ if(isset($id)){
 
               <div class="col-lg-9">
                 <div class="form-group">
-                  <label class="form-control-label">Nome: <span class="tx-danger">*</span></label>
-                  <input class="form-control" type="text" name="nome" required="required" value="<?php if($edit==1){ echo $ln['nome'];} ?>">
+                  <label class="form-control-label">Nome Fantasia: <span class="tx-danger">*</span></label>
+                  <input class="form-control" type="text" name="nome" required="required" value="<?php if($edit==1){ echo $ln['fornecedor'];} ?>">
                 </div>
               </div><!-- col-4 -->
              
-            
+             
+
+
+              <div class="col-lg-7">
+                <div class="form-group">
+                  <label class="form-control-label">Nome do Contato:</label>
+                  <input class="form-control" type="text" name="contato" value="<?php if($edit==1){ echo $ln['contato'];} ?>">
+                </div>
+              </div><!-- col-4 -->
+
+
               <div class="col-lg-5">
                 <div class="form-group">
                   <label class="form-control-label">Telefone: <span class="tx-danger">*</span></label>
@@ -56,13 +66,7 @@ if(isset($id)){
                 </div>
               </div><!-- col-4 -->
 
-              <div class="col-lg-5">
-                <div class="form-group">
-                  <label class="form-control-label">Telefone Secundário:</label>
-                  <input class="form-control" type="text" name="celular" value="<?php if($edit==1){ echo $ln['celular'];} ?>">
-                </div>
-              </div><!-- col-4 -->
-
+              
               <div class="col-lg-10">
                 <div class="form-group">
                   <label class="form-control-label">Endereço:</label>
@@ -77,20 +81,7 @@ if(isset($id)){
                 </div>
               </div><!-- col-4 -->
 
-              <div class="col-lg-3">
-                <div class="form-group">
-                  <label class="form-control-label">Bairro:</label>
-                  <input class="form-control" type="text" name="bairro" value="<?php if($edit==1){ echo $ln['bairro'];} ?>">
-                </div>
-              </div><!-- col-4 -->
-
-              <div class="col-lg-3">
-                <div class="form-group">
-                  <label class="form-control-label">Complemento:</label>
-                  <input class="form-control" type="text" name="complemento" value="<?php if($edit==1){ echo $ln['complemento'];} ?>">
-                </div>
-              </div><!-- col-4 -->
-
+            
              <div class="col-lg-2">
                       <div class="form-group">
                         <label class="form-control-label">UF:</label>

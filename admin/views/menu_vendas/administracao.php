@@ -47,12 +47,14 @@ $total = new TotalizadoresVendas();
               </div><!-- dash-headline-item-two -->
 
             </div><!-- dash-headline-right-top -->
-            <div class="dash-headline-right-bottom">
+            
+
+            <div class="dash-headline-right-bottom" style="display: none;">
               <div class="dash-headline-right-bottom-left">
                 <div class="dash-headline-item-three">
                   <span id="sparkline3" class="sparkline wd-100p">1,4,4,7,5,9,10,5,4,4,7,5,9,10</span>
                   <div>
-                    <h1><?php echo $total->Periodo30Dias('entregas'); ?></h1>
+                    <h1><?php //echo $total->Periodo30Dias('entregas'); ?></h1>
                     <p class="item-label">ENTREGAS</p>
                     <p class="item-desc">ÚLTIMOS 30 DIAS <BR>PERÍODO DE <?php echo $total->Periodo30Dias('periodo'); ?></p>
                   </div>
@@ -62,13 +64,15 @@ $total = new TotalizadoresVendas();
                 <div class="dash-headline-item-three">
                   <span id="sparkline4" class="sparkline wd-100p">1,4,4,7,5,7,4,3,4,4,6,5,9,7</span>
                   <div>
-                    <h1><?php echo $total->Periodo30Dias('balcao'); ?></h1>
+                    <h1><?php //echo $total->Periodo30Dias('balcao'); ?></h1>
                     <p class="item-label">BALCÃO/MESAS</p>
                     <p class="item-desc">ÚLTIMOS 30 DIAS <BR>PERÍODO DE <?php echo $total->Periodo30Dias('periodo'); ?></p>
                   </div>
                 </div><!-- dash-headline-item-three -->
               </div><!-- dash-headline-right-bottom-right -->
             </div><!-- dash-headline-right-bottom -->
+
+
           </div><!-- wd-50p -->
         </div><!-- d-flex ht-100v -->
 
@@ -79,7 +83,7 @@ $total = new TotalizadoresVendas();
             <div class="col-lg-4">
               <i class="icon ion-ios-analytics-outline"></i>
               <div class="dash-content">
-                <label class="tx-primary">TOTAL EM PEDIDOS GERAIS</label>
+                <label class="tx-primary">TOTAL EM VENDAS GERAIS</label>
                 <h2>
                   <?php
                       echo '<small>R$</small> '.$total->VendasTotais();

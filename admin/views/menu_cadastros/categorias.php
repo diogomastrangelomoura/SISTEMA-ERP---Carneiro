@@ -22,7 +22,6 @@
                     <tr class="tx-10">
                     <th class="pd-y-5" width="20">CÓD</th>		
                       <th class="pd-y-5">CATEGORIA</th>                      
-                      <th class="pd-y-5">MEIO-MEIO/ADICIONAIS</th>
                       <th class="pd-y-5"></th>
                       <th class="pd-y-5 tx-center"></th>
                     </tr>
@@ -47,21 +46,7 @@
                       <td class="valign-middle upper"><?php echo $yy['categoria']; ?></td>
                       
                      
-                      <td class="valign-middle">                                              
-                        	<?php 
-                        		if($yy['meio_meio']==1){
-                        			echo 'SIM/';	
-                        		} else {
-                        			echo 'NÃO/';	
-                        		}
-
-                        		if($yy['adicionais']==1){
-                        			echo 'SIM';	
-                        		} else {
-                        			echo 'NÃO';	
-                        		}
-                        	?>
-                      </td>
+                     
 
 					<td class="valign-middle">                                              
                         	<?php echo $ativo; ?>
@@ -85,7 +70,7 @@
                   
                   <?php
                     }
-                  }
+                  } 
                   ?>  
 
                   </tbody>

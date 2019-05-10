@@ -2,8 +2,8 @@
 
 
 <div class="slim-pageheader">
-  <a href="novo-atendente"><button type="button" class="btn btn-primary  pull-right">NOVO ATENDENTE</button></a>
-  <h6 class="slim-pagetitle">LISTAGEM DE ATENDENTES</h6>
+  <a href="novo-atendente"><button type="button" class="btn btn-primary  pull-right">NOVO USUÁRIO</button></a>
+  <h6 class="slim-pagetitle">LISTAGEM DE USUÁRIOS</h6>
 </div><!-- slim-pageheader -->
 
 
@@ -12,7 +12,7 @@
   <div class="card card-table">
   
               <div class="card-header">
-                <h6 class="slim-card-title">ATENDENTES CADASTRADOS</h6>
+                <h6 class="slim-card-title">USUÁRIOS CADASTRADOS</h6>
               </div>
               
 
@@ -21,7 +21,7 @@
                   <thead>
                     <tr class="tx-10">
                     	<th class="pd-y-5" width="20">CÓD</th>
-                      <th class="pd-y-5">Atendente</th>                      
+                      <th class="pd-y-5">Usuário</th>                      
                       <th class="pd-y-5">Tipo</th>
                       <th class="pd-y-5"></th>
                       <th class="pd-y-5 tx-center"></th>

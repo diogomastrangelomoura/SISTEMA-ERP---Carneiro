@@ -37,7 +37,7 @@
         <div class="col-md-4">
            <div class="form-group">
                 <label for="exampleInputEmail1">Ativar Módulo Fiscal</label>
-                <select class="form-control" name="modulo_fiscal" required="required">
+                <select class="form-control sel-gd" name="modulo_fiscal" required="required">
                     <?php
                       if($ln['modulo_fiscal']==1){
                         echo '<option value="1" selected>SIM</option>';
@@ -55,7 +55,7 @@
         <div class="col-md-5">
            <div class="form-group">
                 <label for="exampleInputEmail1">Padrão para Vendas</label>
-                <select class="form-control" name="fiscal_sempre_ativo" required="required" <?php if($ln['modulo_fiscal']==0){ echo 'disabled'; } ?>>
+                <select class="form-control sel-gd" name="fiscal_sempre_ativo" required="required" <?php if($ln['modulo_fiscal']==0){ echo 'disabled'; } ?>>
                     <?php
                       if($ln['fiscal_sempre_ativo']==1){
                         echo '<option value="1" selected>PASSAR VENDA FISCAL POR PADRÃO</option>';

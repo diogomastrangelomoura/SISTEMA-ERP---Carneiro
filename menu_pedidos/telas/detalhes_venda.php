@@ -12,7 +12,7 @@ $dados_cliente = $db->expand($sql);
 
 
 $id_vendedor = $dados_venda['id_vendedor'];
-$sql = $db->select("SELECT nome FROM vendedores WHERE id='$id_vendedor' LIMIT 1");
+$sql = $db->select("SELECT nome FROM usuarios WHERE id='$id_vendedor' LIMIT 1");
 $dados_vendedor = $db->expand($sql);
 ?>
 
@@ -82,7 +82,7 @@ $dados_vendedor = $db->expand($sql);
 	                      <label class="section-label-md">VENDEDOR:</label>
 	                      <span class="upper" style="color: #000">
 	                      <?php 
-	                        if($id_cliente!=0){
+	                        if($id_vendedor!=0){
 	                        	echo $dados_vendedor['nome'];
 	                        } else {
 	                        	echo 'NÃO INFORMADO';

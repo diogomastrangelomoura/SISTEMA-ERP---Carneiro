@@ -1,5 +1,45 @@
 // JavaScript Document
 
+function filtra_cidades(estado){
+	$("#cidade").html('<option value="">CARREGANDO</option>');
+	$.post('../menu_clientes/pesquisas/pesquisa_cidades.php', {estado:estado}, function(resposta){			
+		$("#cidade").html(resposta);
+	});				
+}
+
+
+function gera_codebar(){
+	$("#codigo").val('AGUARDE');
+	$.post("ajax/gera_codigo_aleatorio.php",{id:1},function(resposta){
+		$("#codigo").val(resposta)
+	});	
+}
+
+function gera_margem_produto(){	
+	var margem = $("#margem_lucro").val();
+	var compra = $("#preco_compra").val();
+	
+	if(margem==''){
+		exibe_erros_gerais("Informe a margem para calculo");
+		return;
+	}
+
+	if(compra==''){
+		exibe_erros_gerais("Informe o preço de compra para calculo");
+		return;
+	}
+
+	var venda = (((parseFloat(compra)*parseFloat(margem))/100)+parseFloat(compra));
+	$("#preco_venda").val(venda.toFixed(2));	
+
+}
+
+
+function exibe_erros_gerais(erro){
+	$("#erros_escritos_gerais").html(erro);
+	$("#ModalErrosGeraisAdmin").modal();	
+}
+
 
 function valida_ncm(ncm){
 	$("#ncm_erro").hide();
@@ -105,14 +145,6 @@ function salva_cadastro_insere(){
 $(document).ready(function(){
 
 
-		$('#ModalNovoIngrediente').on('shown.bs.modal', function () {
-	  		$("#ingrediente").focus();
-		});
-
-		$('#ModalNovoIngrediente').on('hidden.bs.modal', function (){
-	  		$("#msg_ok_ingrediente").hide();	
-		});
-
 		
 		$(".cat").change(function(){
 			var p = this.value;
@@ -140,37 +172,6 @@ $(document).ready(function(){
 
 
 
-
-	$("#FormCadastroIngredientes").submit(function(){
-		
-		$("#msg_ok_ingrediente").hide();	
-		$("#btn_salva_ingrediente").html('SALVANDO...');
-		var formdata = $("#FormCadastroIngredientes").serialize();		
-		var ingrediente_name = $("#ingrediente").val();
-
-			$.ajax({type: "POST", url:$("#FormCadastroIngredientes").attr('action'), data:formdata, success: function(retorno){										
-							
-				$('#FormCadastroIngredientes')[0].reset();
-				$("#ingrediente").focus();
-				$("#msg_ok_ingrediente").show();	
-				$("#btn_salva_ingrediente").html('CADASTRAR');
-
-				var total_colunas = $(".apend_ingredientes:last td").length;	
-				$("#some_nenhum_ingrediente").hide();			
-				if(total_colunas==4){
-					var row = $('</tr><tr class="apend_ingredientes"><td class="upper coluna-fixa"><input name="ingrediente_produto[]" value="'+retorno+'" class="form-control" type="checkbox"> '+ingrediente_name+'</td>');    				
-					$('#tabela_ingredientes').append(row);
-				} else {
-					var row = $('<td class="upper coluna-fixa"><input name="ingrediente_produto[]" class="form-control" value="'+retorno+'" type="checkbox">'+ingrediente_name+'</td>');    				
-					$('.apend_ingredientes:last').append(row);
-				}
-								
-			} 
-		
-		});
-		
-		return false;
-	});
 
 
 	$("#FormLoginRetaguarda").submit(function(){
@@ -212,69 +213,6 @@ $(".valores").maskMoney({
     });
 
 
-function varia(tipo){
-
-	if(tipo==''){
-		$("#precos_produtos_variacao").hide();
-		$("#precos_produtos_normal").hide();
-
-			$(".chk2").each(function () {
-	        	$(this).prop("checked", false);        	
-	    	});
-
-			$(".xxvv2").each(function () {
-	        	$(this).val('');      	
-	        	$(this).attr('disabled', true);      	
-	    	});    	
-
-			$("#valor_fechado").val('');
-			$('#valor_fechado').prop('required',false);	
-	
-	} else {
-
-		preco_composto = $("#preco_composto").val();
-	
-
-		//VARIACAO DE PRECO
-		if(preco_composto==1){
-			
-				$.post("controlers/ajax/variacao_precos.php",{categoriax:tipo},function(resposta){
-			
-					$("#ajax_variacoes").html(resposta);
-		   
-					$("#precos_produtos_normal").hide();	
-					$("#precos_produtos_variacao").show();
-
-					$("#valor_fechado").val('');
-					$('#valor_fechado').prop('required',false);	
-
-				});	
-				
-		} 
-
-		//APENAS UM PRECO
-		if(preco_composto==0 && preco_composto!=''){
-			$("#precos_produtos_variacao").hide();
-			$("#precos_produtos_normal").show();
-
-			$(".chk2").each(function () {
-	        	$(this).prop("checked", false);        	
-	    	});
-
-			$(".xxvv2").each(function () {
-	        	$(this).val('');      	
-	        	$(this).attr('disabled', true);      	
-	    	});    	
-
-			$("#valor_fechado").val('');
-			$('#valor_fechado').prop('required',true);	
-		}
-
-
-	}	
-
-}
-
 
 function lista_opcoes(tipo){
 	
@@ -293,64 +231,6 @@ function lista_opcoes(tipo){
 }
 
 
-
-function exibe_precos_variacao_tamanho(tipo){
-	if(tipo==''){
-		$("#precos_produtos_variacao").hide();
-		$("#precos_produtos_normal").hide();	
-	}
-
-	//VARIACAO DE PRECO
-	if(tipo==1){
-
-
-		categoriax = $("#categoria").val();
-
-		if(categoriax==""){
-			
-			alert("ESCOLHA A CATEGORIA PARA LISTAR AS VARIAÇÕES.");			
-			$("#precos_produtos_normal").hide();	
-			$("#valor_fechado").val('');
-			$('#valor_fechado').prop('required',false);	
-
-		} else {
-
-
-			$.post("controlers/ajax/variacao_precos.php",{categoriax:categoriax},function(resposta){
-
-				$("#ajax_variacoes").html(resposta);
-	   
-				$("#precos_produtos_normal").hide();	
-				$("#precos_produtos_variacao").show();
-
-				$("#valor_fechado").val('');
-				$('#valor_fechado').prop('required',false);	
-
-			});	
-			
-
-		}		
-		
-	} 
-
-	//APENAS UM PRECO
-	if(tipo==0){
-		$("#precos_produtos_variacao").hide();
-		$("#precos_produtos_normal").show();
-
-		$(".chk2").each(function () {
-        	$(this).prop("checked", false);        	
-    	});
-
-		$(".xxvv2").each(function () {
-        	$(this).val('');      	
-        	$(this).attr('disabled', true);      	
-    	});    	
-
-		$("#valor_fechado").val('');
-		$('#valor_fechado').prop('required',true);	
-	}
-}
 
 
 

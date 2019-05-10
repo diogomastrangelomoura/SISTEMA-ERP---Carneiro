@@ -96,7 +96,7 @@ require("../../includes/verifica_session.php");
 		            <select class="form-control input-lg upper padding" id="id_vendedor">
 		            	<option value="">INFORME O VENDEDOR</option>
 		            	<?php 
-		            		$sql = $db->select("SELECT id, nome FROM vendedores WHERE ativo='1' ORDER BY nome");
+		            		$sql = $db->select("SELECT id, nome FROM usuarios WHERE ativo='1' AND vendedor='1' ORDER BY nome");
 		            		while($row = $db->expand($sql)){
 		            			echo '<option value="'.$row['id'].'">'.$row['nome'].'</option>';
 		            		}

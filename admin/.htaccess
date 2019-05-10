@@ -40,11 +40,14 @@
 	RewriteRule ^variacoes?$ views/menu_cadastros/variacoes.php [L,QSA]
 	RewriteRule ^taxas?$ views/menu_cadastros/taxas.php [L,QSA]
 	RewriteRule ^clientes?$ views/menu_cadastros/clientes.php [L,QSA]
-	RewriteRule ^opcoes?$ views/menu_cadastros/opcoes.php [L,QSA]
+	RewriteRule ^fornecedores?$ views/menu_cadastros/fornecedores.php [L,QSA]
 	RewriteRule ^pontuacao-trocas?$ views/menu_cadastros/pontuacao-trocas.php [L,QSA]
 
 	RewriteRule ^novo-atendente?$ views/menu_cadastros/novo-atendente.php [L,QSA]
 	RewriteRule ^atendentes/edit/(.*)?$ views/menu_cadastros/novo-atendente.php?id=$1 [L,QSA]	
+
+	RewriteRule ^novo-fornecedor?$ views/menu_cadastros/novo_fornecedor.php [L,QSA]
+	RewriteRule ^fornecedores/edit/(.*)?$ views/menu_cadastros/novo_fornecedor.php?id=$1 [L,QSA]	
 
 	RewriteRule ^nova-taxa?$ views/menu_cadastros/nova-taxa.php [L,QSA]
 	RewriteRule ^taxas/edit/(.*)?$ views/menu_cadastros/nova-taxa.php?id=$1 [L,QSA]	
@@ -91,8 +94,6 @@
 	RewriteRule ^despesas-categorias-nova?$ views/menu_vendas/despesas-categorias-nova.php [L,QSA]
 
 
-	RewriteRule ^modulos-internet?$ views/menu_configuracoes/modulos-internet.php [L,QSA]
-	RewriteRule ^atualiza-servidor-web?$ views/menu_configuracoes/atualiza-servidor-web.php [L,QSA]
 
 	RewriteRule ^modulos-fiscal?$ views/menu_configuracoes/modulos-fiscal.php [L,QSA]
 	RewriteRule ^xml-visualizar?$ views/menu_configuracoes/xml-visualizar.php [L,QSA]
@@ -112,6 +113,7 @@
 	RewriteRule ^variacoes/delete/(.*)?$ controlers/cadastros/apaga_variacoes.php?id=$1 [L,QSA]
 	RewriteRule ^adicionais/delete/(.*)?$ controlers/cadastros/apaga_adicionais.php?id=$1 [L,QSA]
 	RewriteRule ^opcoes/delete/(.*)?$ controlers/cadastros/apaga_opcoes.php?id=$1 [L,QSA]
+	RewriteRule ^fornecedores/delete/(.*)?$ controlers/cadastros/apaga_fornecedor.php?id=$1 [L,QSA]
 
 
 	RewriteRule ^atendentes/save?$ controlers/cadastros/salva_atendente.php [L,QSA]

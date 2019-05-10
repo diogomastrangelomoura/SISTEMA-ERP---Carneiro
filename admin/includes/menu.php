@@ -2,7 +2,7 @@
 
       $avisos = new AvisosLoja();
 
-      $avisos->AvisoUpdateBaseInternet();
+   
       
 
 ?>
@@ -44,29 +44,12 @@
               <ul>                                
                 
                 <li class="sub-with-sub">
-                  <a href="javascript:void(0);">ATENDENTES</a>
+                  <a href="javascript:void(0);">USUÁRIOS</a>
                   <ul>
                     <li><a href="atendentes">LISTAGEM</a></li>
-                    <li><a href="novo-atendente">NOVO ATENDENTE</a></li>                    
+                    <li><a href="novo-atendente">NOVO USUÁRIO</a></li>                    
                   </ul>
                 </li>	
-
-                <li class="sub-with-sub">
-                  <a href="javascript:void(0);">ADICIONAIS</a>
-                  <ul>
-                    <li><a href="adicionais">LISTAGEM</a></li>
-                    <li><a href="novo-adicional">NOVO ADICIONAL</a></li>                    
-                  </ul>
-                </li>
-
-
-                <li class="sub-with-sub">
-                  <a href="javascript:void(0);">OPÇÕES P/ COMBOS</a>
-                  <ul>
-                    <li><a href="opcoes">LISTAGEM</a></li>
-                    <li><a href="nova-opcao">NOVA OPÇÃO</a></li>                    
-                  </ul>
-                </li>
 
                 <li class="sub-with-sub">
                   <a href="javascript:void(0);">CATEGORIAS</a>
@@ -86,13 +69,6 @@
                 </li>
 
 
-                <li class="sub-with-sub">
-                  <a href="javascript:void(0);">ENTREGADORES</a>
-                  <ul>
-                    <li><a href="entregadores">LISTAGEM</a></li>
-                    <li><a href="novo-entregador">NOVO ENTREGADOR</a></li>                    
-                  </ul>
-                </li>
 
                 <li class="sub-with-sub">
                   <a href="javascript:void(0);">PRODUTOS</a>
@@ -108,23 +84,16 @@
                   </ul>
                 </li>
 
-                <li class="sub-with-sub">
-                  <a href="javascript:void(0);">VARIAÇÕES</a>
-                  <ul>                    
-                  	<li><a href="variacoes">LISTAGEM</a></li>	
-                    <li><a href="nova-variacao">NOVA VARIAÇÃO</a></li>                                       
-                  </ul>
-                </li>
 
                 <li class="sub-with-sub">
-                  <a href="javascript:void(0);">TAXAS DE ENTREGA</a>
+                  <a href="javascript:void(0);">FORNECEDORES</a>
                   <ul>
-                    <li><a href="taxas">LISTAGEM</a></li>
-                    <li><a href="nova-taxa">NOVA TAXA</a></li>                    
+                    <li><a href="fornecedores">LISTAGEM</a></li>
+                    <li><a href="novo-fornecedor">NOVO FORNECEDOR</a></li>                    
                   </ul>
-                </li>
+                </li> 
 
-              
+               
                                
               </ul>
             </div><!-- dropdown-menu -->
@@ -138,9 +107,9 @@
             </a>
             <div class="sub-item">
               <ul>                
-                <li><a href="relatorio-clientes" target="_blank">CLIENTES CADASTRADOS</a></li>
-                <li><a href="relatorio-produtos-vendidos">PRODUTOS VENDIDOS</a></li>
-                <li><a href="relatorio-vendas-consolidadas">VENDAS CONSOLIDADAS</a></li>
+                <li style="display: none;"><a href="relatorio-clientes" target="_blank">CLIENTES CADASTRADOS</a></li>
+                <li style="display: none;"><a href="relatorio-produtos-vendidos">PRODUTOS VENDIDOS</a></li>
+                <li style="display: none;"><a href="relatorio-vendas-consolidadas">VENDAS CONSOLIDADAS</a></li>
                                
               </ul>
             </div><!-- dropdown-menu -->
@@ -155,12 +124,9 @@
             <div class="sub-item">
               <ul>                
                 <li><a href="modulos-fiscal">MÓDULO FISCAL</a></li>                                
-                <li><a href="modulos">MÓDULO CONTROLE DE ENTREGAS</a></li>                                
-                <li><a href="modulos-internet">MÓDULO PEDIDOS WEB</a></li>                                                
                 <li><a href="impressao">IMPRESSÃO</a></li>                                
                 <li><a href="gerais">GERAIS</a></li>                
-                <li><a href="formas-pagamento">FORMAS DE PAGAMENTO</a></li>                
-                <li><a href="config-sistema-pontos">SISTEMA DE PONTOS</a></li>   
+                <li><a href="formas-pagamento">FORMAS DE PAGAMENTO</a></li>                                
               </ul>
             </div><!-- dropdown-menu -->
           </li>

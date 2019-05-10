@@ -8,6 +8,8 @@ body{height:100%; width: 100%; background-position: center center; background-si
 
 .red{color: #B20000}
 
+select.sel-gd{font-weight: 400; border-radius: 0; height: 42px}
+
 span.span_install{color: #3876AD; font-size: 26px; font-weight: 300}
 span.span_install small{color: #3876AD; font-size: 16px; font-weight: 300}
 .loader-instalacao{font-size: 60px; color: #3876AD; line-height: 100px}

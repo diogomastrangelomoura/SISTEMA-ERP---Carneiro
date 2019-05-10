@@ -23,7 +23,7 @@ if(isset($_SESSION['user_sisconnection_adm'])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <title>RETAGUARDA SIS E-FOOD v<?php echo $dados_sistema['versao']; ?></title>
+    <title>RETAGUARDA SIS ERP v<?php echo $dados_sistema['versao']; ?></title>
 
     <!-- Vendor css -->
     <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -53,7 +53,7 @@ if(isset($_SESSION['user_sisconnection_adm'])){
     	
       <div class="signin-box">
         <h2 class="slim-logo text-center"><img src="img/logo_sis.png"></a></h2>
-        <h2 class="signin-title-primary text-center">SIS E-Food <small>v<?php echo $dados_sistema['versao']; ?></small></h2>
+        <h2 class="signin-title-primary text-center">SIS ERP <small>v<?php echo $dados_sistema['versao']; ?></small></h2>
         <h3 class="signin-title-secondary text-center">RETAGUARDA ADMINISTRATIVA</h3>
 
         <div class="form-group">
@@ -63,7 +63,7 @@ if(isset($_SESSION['user_sisconnection_adm'])){
           <input type="password" class="form-control" name="senha" required placeholder="Informe a senha">
         </div><!-- form-group -->
         <button type="submit" id="botao_login" class="btn btn-primary btn-block btn-signin">ACESSAR</button>
-        <p class="mg-b-0 text-center">Licenciado para <strong><?php echo $dados_loja['razao']; ?></strong></p>
+        <p class="mg-b-0 text-center">Licenciado para: <br><strong><?php echo $dados_loja['razao']; ?></strong></p>
       </div><!-- signin-box -->
 
     </div><!-- signin-wrapper -->

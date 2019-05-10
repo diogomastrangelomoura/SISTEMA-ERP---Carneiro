@@ -47,7 +47,7 @@
                 <label for="exampleInputEmail1">
                 	Receber em: <b>Dinheiro</b>
                 </label>
-                <select class="form-control" name="dinheiro" required="required">
+                <select class="form-control sel-gd" name="dinheiro" required="required">
                     <?php
                       if($ativo_dinheiro==1){
                         echo '<option value="1" selected>SIM</option>';
@@ -66,7 +66,7 @@
                 <label for="exampleInputEmail1">
                 	Receber em: <b>Cartão</b>
                 </label>
-                <select class="form-control" name="cartao" required="required">
+                <select class="form-control sel-gd" name="cartao" required="required">
                     <?php
                       if($ativo_cartao==1){
                         echo '<option value="1" selected>SIM</option>';
@@ -86,7 +86,7 @@
                 <label for="exampleInputEmail1">
                 	Receber no: <b>Crediário</b>
                 </label>
-                <select class="form-control" name="crediario" required="required">
+                <select class="form-control sel-gd" name="crediario" required="required">
                     <?php
                       if($ativo_crediario==1){
                         echo '<option value="1" selected>SIM</option>';

@@ -52,74 +52,12 @@
 
         <div class="col-md-4">
            <div class="form-group">
-                <label for="exampleInputEmail1">Nome Impressora Principal (Caixa)</label>
+                <label for="exampleInputEmail1">Nome Impressora Principal</label>
                 <input type="text" class="form-control" name="impressora_principal"  value="<?php echo $ln2['impressora_principal']; ?>"/>
            </div>
         </div>
 
-        <div class="col-md-4">
-           <div class="form-group">
-                <label for="exampleInputEmail1">Nome Impressora Secundária (Cozinha)</label>
-                <input type="text" class="form-control" name="impressora_secundaria"  value="<?php echo $ln2['impressora_secundaria']; ?>"/>
-           </div>
-        </div> 
-
-
-        <div class="col-md-4">
-           <div class="form-group">
-                <label for="exampleInputEmail1">Primeira Impressão</label>
-                <select class="form-control select2" name="primeira_impressao" required="required">
-                    <?php
-                      if($ln2['primeira_impressao']=='IGUAIS'){
-                        echo '<option value="IGUAIS" selected>IGUAIS NAS DUAS IMPRESSORAS</option>';
-                        echo '<option value="PICADA">COMPLETA NO CAIXA E SEPARADA NA COZ.</option>';
-                      } else if($ln2['primeira_impressao']=='PICADA'){
-                        echo '<option value="PICADA" selected>COMPLETA NO CAIXA E SEPARADA NA COZ.</option>';
-                        echo '<option value="IGUAIS">IGUAIS NAS DUAS IMPRESSORAS</option>';                        
-                      } else {
-                        echo '<option value="IGUAIS" selected>IGUAIS NAS DUAS IMPRESSORAS</option>';
-                        echo '<option value="PICADA">COMPLETA NO CAIXA E SEPARADA NA COZ.</option>';
-                      }
-                    ?>
-                </select>  
-           </div>
-        </div>
         
-
-        <div class="col-md-4">
-           <div class="form-group">
-                <label for="exampleInputEmail1">Imprimir Endereço Cozinha</label>
-                <select class="form-control" name="imprimir_endereco_entrega_cozinha" required="required">
-                    <?php
-                      if($ln2['imprimir_endereco_entrega_cozinha']==1){
-                        echo '<option value="1" selected>SIM</option>';
-                        echo '<option value="0">NÃO</option>';
-                      } else {
-                        echo '<option value="0" selected>NÃO</option>';
-                        echo '<option value="1">SIM</option>';                        
-                      }
-                    ?>
-                </select>  
-           </div>
-        </div>
-
-
-        <div class="col-md-4">
-           <div class="form-group">
-                <label for="exampleInputEmail1">Impressão de Ítem Avulso</label>
-                <select class="form-control select2" name="impressao_avulsa_item" required="required">
-                    <?php
-                      if($ln2['impressao_avulsa_item']=='JUNTO APENAS UMA VEZ'){
-                        echo '<option value="JUNTO APENAS UMA VEZ" selected>JUNTO APENAS UMA VEZ</option>';
-                        echo '<option value="ITEM A ITEM" >ÍTEM A ÍTEM</option>';                                                
-                      } else {
-                        echo '<option value="ITEM A ITEM" selected>SEPARADO ÍTEM A ÍTEM</option>';
-                        echo '<option value="JUNTO APENAS UMA VEZ">JUNTO APENAS UMA VEZ</option>';                       
-                      }
-                    ?>
-                </select>  
-           </div>
-        </div>
 
 
             </div><!-- row -->

@@ -6,7 +6,7 @@ class TotalizadoresVendas{
 	public function VendasTotais(){	
 		
 		$db= new DB();
-		$sql = $db->select("SELECT SUM(valor_final_venda) AS valor_final FROM aguarda_venda");
+		$sql = $db->select("SELECT SUM(valor_final_venda) AS valor_final FROM vendas");
 		$result = $db->expand($sql);
 		return number_format($result['valor_final'],2,",",".");	
 		
@@ -25,7 +25,7 @@ class TotalizadoresVendas{
 	public function ProdutosTotais(){	
 		
 		$db= new DB();
-		$sql = $db->select("SELECT COUNT(*) AS produtos_final FROM lanches");
+		$sql = $db->select("SELECT COUNT(*) AS produtos_final FROM produtos");
 		$result = $db->expand($sql);
 		return $result['produtos_final'];
 		
@@ -47,7 +47,7 @@ class TotalizadoresVendas{
 			$result = $db->expand($sql);
 			$id_caixa = $result['id'];
 
-			$sql = $db->select("SELECT SUM(valor_final_venda) AS valor_final FROM aguarda_venda WHERE id_caixa='$id_caixa'");
+			$sql = $db->select("SELECT SUM(valor_final_venda) AS valor_final FROM vendas WHERE id_caixa='$id_caixa'");
 			$result = $db->expand($sql);
 			return number_format($result['valor_final'],2,",",".");	
 		}
@@ -70,36 +70,14 @@ class TotalizadoresVendas{
 
 		if($tipo=='valores'){
 			$sql = $db->select("SELECT SUM(valor_final_venda) AS valor_final 
-				FROM aguarda_venda 
-				WHERE data_pedido>='$diasatras' AND data_pedido<='$hoje'");
+				FROM vendas
+				WHERE data>='$diasatras' AND data<='$hoje'");
 			$result = $db->expand($sql);
 			return number_format($result['valor_final'],2,",",".");
 
 		}
 
-		if($tipo=='entregas'){
-			$sql = $db->select("SELECT COUNT(*) AS total 
-				FROM aguarda_venda 
-				WHERE data_pedido>='$diasatras' AND data_pedido<='$hoje' AND entrega='1'");
-			$result = $db->expand($sql);
-			if($result['total']<10){
-				$result['total'] = '0'.$result['total'];
-			}
-			return $result['total'];
-
-		}
-
-		if($tipo=='balcao'){
-			$sql = $db->select("SELECT COUNT(*) AS total 
-				FROM aguarda_venda 
-				WHERE data_pedido>='$diasatras' AND data_pedido<='$hoje' AND entrega='0'");
-			$result = $db->expand($sql);
-			if($result['total']<10){
-				$result['total'] = '0'.$result['total'];
-			}
-			return $result['total'];
-
-		}
+		
 
 
 	}

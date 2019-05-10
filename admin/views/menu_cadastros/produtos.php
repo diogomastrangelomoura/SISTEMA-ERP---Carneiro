@@ -29,10 +29,10 @@
                   <tbody>
 
                 <?php
-                  $sel = $db->select("SELECT lanches.*, categorias.categoria AS cat       
-                FROM lanches 
-                LEFT JOIN categorias on lanches.categoria=categorias.id
-                ORDER BY categorias.categoria, lanches.codigo, lanches.produto");
+                  $sel = $db->select("SELECT produtos.*, categorias.categoria AS cat       
+                FROM produtos 
+                LEFT JOIN categorias on produtos.categoria=categorias.id
+                ORDER BY produtos.produto");
                 
                 if($db->rows($sel)){
                   $x=1; 
@@ -42,7 +42,7 @@
                     $foto = foto_produto($yy['foto']);
                     $ativo = ativo_produto($yy['ativo']);
                     $id_produto = $yy['id'];
-                    $valores_produto = valores_produto($id_produto);
+                    $valores_produto = $yy['preco_venda'];
                       
 
                 ?>    
@@ -58,22 +58,7 @@
                           </span>  
                           <span class="upper"><?php echo $yy['produto']; ?></span></a>
                          
-                        <?php 
-                            $pega = $db->select("SELECT ingredientes_lanches.id_ingrediente, ingredientes.ingrediente 
-                              FROM ingredientes_lanches 
-                              LEFT JOIN ingredientes ON ingredientes_lanches.id_ingrediente=ingredientes.id
-                              WHERE ingredientes_lanches.id_produto='$id_produto'");
-                            if($db->rows($pega)){
-                              echo '<small class="tx-primary upper">[<B>INGREDIENTES: </B>';
-                                while($line = $db->expand($pega)){
-                                  echo $line['ingrediente'].', ';
-                                }
-                                echo ']</small>';  
-                            } else {
-                              echo '<small class="tx-primary">[INGREDIENTES NÃO DEFINIDOS]</small>';
-                            }
-                            
-                        ?>  
+                        
                       </td>
                       
                       <td class="valign-middle">                                              
