@@ -244,6 +244,59 @@ include_once("../../diversos/funcoes_diversas.php");
 	//FORMAS DE PAGAMENTO SE HOUVER//
 
 
+
+	//////CREDIARIO////////
+		$crediario = '';
+		$parcelas = '';
+		$parcelas2 = '';
+		$txt_crediario_final='';
+
+		$sel_crediario = $db->select("SELECT contas_clientes.*, clientes.nome FROM contas_clientes
+		LEFT JOIN clientes ON contas_clientes.id_cliente=clientes.id
+		WHERE contas_clientes.id_venda='$id_venda'
+		ORDER BY contas_clientes.id DESC LIMIT 1");		
+
+		if($db->rows($sel_crediario)){	
+			
+			$nm = $db->expand($sel_crediario);
+
+			$txt_crediario = array();
+			$txt_crediario[] = '----------------------------------------'."\r\n";
+			$txt_crediario[] = 'CIENCIA DE DIVIDA';         
+			$txt_crediario[] = '----------------------------------------';
+			$crediario = array_map("centraliza", $txt_crediario);
+
+			$sel_parcelas = $db->select("SELECT * FROM parcelas_contas_clientes			
+			WHERE id_venda='$id_venda'
+			ORDER BY vencimento");
+
+			$txt_crediario_final .= "\r\n";			
+			$txt_crediario_final .= retira_acentos($nm['nome'])."\r\n";
+			$txt_crediario_final .= "\r\n";
+
+			while($parc = $db->expand($sel_parcelas)){
+
+				 $parcelas = 'VENC: '.data_mysql_para_user($parc['vencimento']);
+				 $parcelas2 = 'R$ '.number_format(($parc['valor']),2,",",".");
+				 $total_espacos = $n_colunas - strlen($parcelas);
+				 $total_espacos = $total_espacos- strlen($parcelas2);
+				 $espacos = ''; 
+				 for($i = 0; $i < $total_espacos; $i++){
+					$espacos .= ' ';
+				 }
+
+				 $txt_crediario_final .= $parcelas.$espacos.$parcelas2."\r\n";
+
+				
+			}		
+
+			$txt_crediario_final .= "\r\n";
+			$txt_crediario_final .= "RECONHECO QUE PAGAREI A DIVIDA ACIMA"."\r\n";	
+
+		} 
+	///////////////////////	
+
+
 	//IMPRIME O NOME DO ATENDENTE NA COMANDA
 	$dados_atendente = $dados_venda['id_usuario'];
 	$dados_atendente = $db->select("SELECT nome FROM usuarios WHERE id='$dados_atendente' LIMIT 1");	
@@ -275,6 +328,8 @@ include_once("../../diversos/funcoes_diversas.php");
 	.$txt_valor_final_receber //Final	
 	.implode("\r\n", $formas_pgto)
 	.$txt_pagamentos_recebidos	
+	.implode("\r\n", $crediario)
+	.$txt_crediario_final
 	.$dados_entrega;
 
 	

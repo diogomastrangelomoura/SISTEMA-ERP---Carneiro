@@ -1,5 +1,4 @@
 <?php
-//header("Content-Type: text/html; charset=iso-8859-1");
 require ("../class/class.db.php");
 require ("../class/class.seguranca.php");
 
@@ -11,7 +10,7 @@ require ("../class/class.seguranca.php");
 			echo '<option value="">escolha o produto</option>';
 
 			while($yy = $db->expand($sel)){
-				echo '<option value="'.$yy['id'].'">'.$yy['produto'].'</option>';
+				echo '<option value="'.$yy['id'].'" class="upper">'.$yy['produto'].'</option>';
 			}
 
 

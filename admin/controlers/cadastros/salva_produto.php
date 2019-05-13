@@ -6,7 +6,7 @@ $Images = new UploadArquivoSis();
 if($id!=0){
 	
 		
-	$grava = $db->select("UPDATE produtos SET csosn='$csosn', ncm='$ncm', cst='$cst', cfop='$cfop', produto='$produto', categoria='$categoria', codigo='$codigo', ativo='$ativo', id_fornecedor='$fornecedor', estoque='$estoque', preco_venda='$preco_venda', preco_compra='$preco_compra', margem_lucro='$margem_lucro', fabricante='$fabricante' WHERE id='$id' LIMIT 1");	
+	$grava = $db->select("UPDATE produtos SET estoque_minimo='$estoque_minimo', csosn='$csosn', ncm='$ncm', cst='$cst', cfop='$cfop', produto='$produto', categoria='$categoria', codigo='$codigo', ativo='$ativo', id_fornecedor='$fornecedor', estoque='$estoque', preco_venda='$preco_venda', preco_compra='$preco_compra', margem_lucro='$margem_lucro', fabricante='$fabricante' WHERE id='$id' LIMIT 1");	
 
 
 
@@ -15,7 +15,7 @@ if($id!=0){
 	
 
 
-	$grava = $db->select("INSERT INTO produtos (csosn, ncm, cst, cfop, produto, categoria, codigo, ativo, id_fornecedor, estoque, preco_venda, preco_compra, margem_lucro, fabricante) VALUES ('$csosn', '$ncm', '$cst', '$cfop', '$produto', '$categoria', '$codigo', '$ativo', '$fornecedor', '$estoque', '$preco_venda', '$preco_compra', '$margem_lucro', '$fabricante')");	
+	$grava = $db->select("INSERT INTO produtos (estoque_minimo, csosn, ncm, cst, cfop, produto, categoria, codigo, ativo, id_fornecedor, estoque, preco_venda, preco_compra, margem_lucro, fabricante) VALUES ('$estoque_minimo', '$csosn', '$ncm', '$cst', '$cfop', '$produto', '$categoria', '$codigo', '$ativo', '$fornecedor', '$estoque', '$preco_venda', '$preco_compra', '$margem_lucro', '$fabricante')");	
 
 	
 

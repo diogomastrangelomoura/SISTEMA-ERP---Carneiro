@@ -19,6 +19,7 @@
     <script src="<?php echo ADMIN_DIR; ?>lib/d3/js/d3.js"></script>
     <script src="<?php echo ADMIN_DIR; ?>lib/rickshaw/js/rickshaw.min.js"></script>
     <script src="<?php echo ADMIN_DIR; ?>lib/jquery.sparkline.bower/js/jquery.sparkline.min.js"></script>
+    <script src="<?php echo ADMIN_DIR; ?>lib/select2/js/select2.full.min.js"></script>
 
     <script src="<?php echo ADMIN_DIR; ?>js/ResizeSensor.js"></script>
     <script src="<?php echo ADMIN_DIR; ?>js/dashboard.js"></script>

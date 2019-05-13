@@ -1,5 +1,12 @@
 // JavaScript Document
 
+function carrega_produtos(id){
+	$("#produto").html('<option value="">CARREGANDO</option>');
+	$.post('ajax/pega_produtos.php', {categoria:id}, function(resposta){			
+		$("#produto").html(resposta);
+	});				
+}
+
 function filtra_cidades(estado){
 	$("#cidade").html('<option value="">CARREGANDO</option>');
 	$.post('../menu_clientes/pesquisas/pesquisa_cidades.php', {estado:estado}, function(resposta){			
@@ -60,6 +67,9 @@ $(".muda_tabs").click(function(){
 });
 
 
+ $('.select2-show-search').select2({
+          minimumResultsForSearch: ''
+        });
 
 $("#PesquisaXML").submit(function(){
 		

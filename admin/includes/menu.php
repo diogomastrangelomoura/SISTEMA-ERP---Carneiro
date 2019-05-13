@@ -107,9 +107,24 @@
             </a>
             <div class="sub-item">
               <ul>                
-                <li style="display: none;"><a href="relatorio-clientes" target="_blank">CLIENTES CADASTRADOS</a></li>
-                <li style="display: none;"><a href="relatorio-produtos-vendidos">PRODUTOS VENDIDOS</a></li>
-                <li style="display: none;"><a href="relatorio-vendas-consolidadas">VENDAS CONSOLIDADAS</a></li>
+
+                <li class="sub-with-sub">
+                  <a href="javascript:void(0);">PRODUTOS</a>
+                  <ul>
+                    <li><a href="relatorio-produtos">PRODUTOS GERAIS</a></li>
+                                                       
+                    <li><a href="relatorio-estoque-critico">ESTOQUE CRÍTICO</a></li>                                        
+                  </ul>
+                </li> 
+
+
+                <li class="sub-with-sub">
+                  <a href="javascript:void(0);">VENDAS</a>
+                  <ul>
+                    <li><a href="relatorio-real">CONSOLIDADO REAL</a></li>
+                    <li><a href="relatorio-bruto">CONSOLIDADO BRUTO</a></li>                                        
+                  </ul>
+                </li> 
                                
               </ul>
             </div><!-- dropdown-menu -->

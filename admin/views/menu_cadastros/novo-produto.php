@@ -221,10 +221,17 @@ if(isset($id)){
       <div class="form-layout">
             <div class="row ">
 
-              <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Estoque</label>
                             <input type="number"  class="form-control" name="estoque" value="<?php if($edit==1){ echo $ln['estoque'];} ?>">                              
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Estoque Mínimo</label>
+                            <input type="number"  class="form-control" name="estoque_minimo" value="<?php if($edit==1){ echo $ln['estoque_minimo'];} ?>">                              
                         </div>
                     </div>
 

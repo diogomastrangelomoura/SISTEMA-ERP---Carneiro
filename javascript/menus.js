@@ -21,8 +21,8 @@ function inicia_sistema(){
 		//TUDO OK PARA INICIAR VENDAS
 		if(resposta==1){
 
-			$("#conteudo_geral").load('menu_pedidos/telas/novo_pedido.php');	
-			//$("#conteudo_geral").load('menu_clientes/telas/novo_cliente.php?id=1');	
+			//$("#conteudo_geral").load('menu_pedidos/telas/novo_pedido.php');	
+			$("#conteudo_geral").load('menu_clientes/telas/novo_cliente.php?id=1');	
 			
 		//NAO TEM CAIXA ABERTO
 		} else {

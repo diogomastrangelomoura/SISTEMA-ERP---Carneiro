@@ -71,6 +71,25 @@ if($tipo_venda==1){
 
 		$grava =  $db->select("INSERT INTO contas_clientes (id_cliente, id_venda, valor, tipo, data_debito, id_caixa_recebe, id_usuario) VALUES ('$id_cliente_compra', '$id_final', '$pgto_crediario_final', '0', '$hoje', '$id_caixa_aberto', '$id_usuario')");
 
+
+
+		///PARCELAS///
+		$x=1;
+		$valor_parcela = ($valor_final_compra/$qtd_parcelas_final);
+		$prazo = 30;
+		$hoje = date("Y-m-d");
+
+		while($x<=$qtd_parcelas_final){
+
+			$vencimento = date('Y-m-d', strtotime("+$prazo days",strtotime($hoje))); 
+			$prazo = $prazo+30;
+
+			$insere = $db->select("INSERT INTO parcelas_contas_clientes (id_venda, id_cliente, valor, vencimento) VALUES ('$id_final', '$id_cliente_compra', '$valor_parcela', '$vencimento')");
+			$x++;	
+		}
+		
+
+
 			
 	}
 

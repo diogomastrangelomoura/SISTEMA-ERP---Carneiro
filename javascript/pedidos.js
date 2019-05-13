@@ -55,6 +55,7 @@ function confirma_finaliza_venda(){
 	var tipo_venda = $("#tipo_venda").val();
 	var valor_crediario = $("#pgto_crediario_final").val();
 	var id_cliente_compra = $("#id_cliente_compra").val();
+	var qtd_parcelas_final = $("#qtd_parcelas_final").val();
  	
 	if(tipo_venda==1){
 		if(restante_receber!=0){
@@ -68,6 +69,12 @@ function confirma_finaliza_venda(){
 			exibe_erros_gerais('Informe o cliente para marcar <br>o saldo em sua conta!')
 			return;	
 		}
+
+		if(qtd_parcelas_final==''){
+			exibe_erros_gerais('Informe o número de parcelas!')
+			return;	
+		}
+
 	}
 
 	if(tipo_venda==1){
@@ -287,6 +294,11 @@ function exibe_aviso_ok(apaga=0){
 
 
 function soma_preco_quantidade(valor){
+
+	if(valor=='' || valor=='0'){
+		valor = 1;
+		$("#qtd_frente_caixa").val('1')		
+	}
 
 	var preco_produto_frente_caixa = ($("#preco_produto_frente_caixa").val());	
 	if(preco_produto_frente_caixa!=0 && preco_produto_frente_caixa!=''){		

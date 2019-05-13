@@ -102,12 +102,22 @@ require("../../includes/verifica_configuracoes_loja.php");
 	        <hr>
 
 	        <div class="row row-xs">
-	        	<div class="col-md-8">
-	            	CONTA DO CLIENTE <br>
-	                <a tabindex="-1  href="javascript:void(0)">VALOR MARCADO NA CONTA DO CLIENTE</a>
+	        	<div class="col-md-4">
+	            	CREDIÁRIO <br>
+	                <a tabindex="-1  href="javascript:void(0)">CONTA DO CLIENTE</a>
 	            </div>
-	        	<div class="col-md-4  text-right">
-	        		<input type="text" class="valores form-control text-right input-lg" placeholder="R$ 0.00" id="pgto_crediario_final" name="pgto_crediario_final" onblur="javascript:faz_troco_pgto()" value="0.00">
+	        	<div class="col-md-8  text-right">
+	        		<div class="row row-xs">
+	        			
+	        			<div class="col-md-6">	
+	        				<input type="text" class="valores form-control text-right input-lg" placeholder="R$ 0.00" id="pgto_crediario_final" name="pgto_crediario_final" onblur="javascript:faz_troco_pgto()" value="0.00">
+	        			</div>	
+
+	        			<div class="col-md-6">	
+	        				<input type="number" class="form-control text-center input-lg" placeholder="NUM PARCELA" id="qtd_parcelas_final" name="qtd_parcelas_final" style="font-size: 15px">
+	        			</div>	
+
+	        		</div>
 	        	</div>            
 	        </div>
 	        

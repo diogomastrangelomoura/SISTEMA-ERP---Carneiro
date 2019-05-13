@@ -78,26 +78,25 @@
 	RewriteRule ^gerais?$ views/menu_configuracoes/gerais.php [L,QSA]
 	RewriteRule ^config-sistema-pontos?$ views/menu_configuracoes/config-sistema-pontos.php [L,QSA]
 	
-
-	RewriteRule ^relatorio-clientes?$ views/menu_relatorios/pdf/clientes.php [L,QSA]
-	RewriteRule ^relatorio-produtos-vendidos?$ views/menu_relatorios/produtos-vendidos.php [L,QSA]
-	RewriteRule ^relatorio-vendas-consolidadas?$ views/menu_relatorios/vendas-consolidadas.php [L,QSA]
 	RewriteRule ^caixa-detalhes/(.*)?$ views/menu_relatorios/pdf/caixa-detalhes.php?id=$1 [L,QSA]
 
 	RewriteRule ^profile?$ views/menu_usuarios/profile.php [L,QSA]
 	RewriteRule ^mensagens?$ views/menu_usuarios/mensagens.php [L,QSA]
-
 
 	RewriteRule ^despesas-categorias?$ views/menu_vendas/despesas-categorias.php [L,QSA]
 	RewriteRule ^despesas-nova?$ views/menu_vendas/despesas-nova.php [L,QSA]
 	RewriteRule ^despesas-relatorio?$ views/menu_vendas/despesas-relatorio.php [L,QSA]
 	RewriteRule ^despesas-categorias-nova?$ views/menu_vendas/despesas-categorias-nova.php [L,QSA]
 
-
-
 	RewriteRule ^modulos-fiscal?$ views/menu_configuracoes/modulos-fiscal.php [L,QSA]
 	RewriteRule ^xml-visualizar?$ views/menu_configuracoes/xml-visualizar.php [L,QSA]
 	
+
+	RewriteRule ^relatorio-produtos?$ views/menu_relatorios/relatorio-produtos.php [L,QSA]
+	RewriteRule ^relatorio-produtos-fornecedor?$ views/menu_relatorios/relatorio-produtos-fornecedor.php [L,QSA]
+	RewriteRule ^relatorio-estoque-critico?$ views/menu_relatorios/relatorio-estoque-critico.php [L,QSA]
+	RewriteRule ^relatorio-real?$ views/menu_relatorios/relatorio-real.php [L,QSA]
+	RewriteRule ^relatorio-bruto?$ views/menu_relatorios/relatorio-bruto.php [L,QSA]
 
 
 

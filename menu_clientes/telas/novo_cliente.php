@@ -181,7 +181,33 @@ $dados = $db->expand($dados_proc);
 				<div class="row tabs" id="tab3">
          			
 					<div class="col-md-8" id="atualiza_aqui">
-						<?php include_once("../listagem/listagem_crediario_cliente.php"); ?>
+
+
+						<ul class="nav nav-activity-profile">
+		        
+					        <li  class="nav-item"><a  href="javascript:void(0)" class="nav-link active muda_tabs_internas" data-id="20">Débitos</a></li>
+
+					       
+					        <li class="nav-item"><a  href="javascript:void(0)" class="nav-link muda_tabs_internas" data-id="21">Pagamentos Recebidos</a></li>
+					    </ul>
+					        
+					      
+
+						        <div class="tabs_internas" id="tab20" style="display: flex; ">
+						        	
+						        		<?php include_once("../listagem/listagem_crediario_cliente.php"); ?>
+						        	
+						        </div>	
+
+						        <div class="tabs_internas" id="tab21">
+						        	
+						        	<?php include_once("../listagem/listagem_pagamentos_cliente.php"); ?>
+						        </div>
+
+
+					    
+
+						
 					</div>	
 
 					<div class="col-md-4">

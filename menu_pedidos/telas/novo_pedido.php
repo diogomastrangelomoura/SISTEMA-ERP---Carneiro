@@ -38,7 +38,7 @@ require("../../includes/verifica_session.php");
 		        
 		        <div class="col-md-4">
 			        <div class="form-group icones-campo">		            
-			            <input id="qtd_frente_caixa" onblur="javascript:soma_preco_quantidade(this.value)" type="number" class="form-control input-lg text-center passa_enter" placeholder="QTD" value="01" name="qtd_frente_caixa">
+			            <input id="qtd_frente_caixa" onblur="javascript:soma_preco_quantidade(this.value)" type="number" class="form-control input-lg text-center passa_enter" placeholder="QTD" value="01" name="qtd_frente_caixa" >
 			        </div>	
 			    </div>
 
@@ -57,7 +57,7 @@ require("../../includes/verifica_session.php");
 	    	</div>
 	    	</div>
 
-	    		<div class="col-md-6 text-center top15">
+	    		<div class="col-md-6 text-center top15 hide">
 			    	<img src="imagens/sistema/logo_centro.png" class="img-responsive center-block">
 			    </div>	
 

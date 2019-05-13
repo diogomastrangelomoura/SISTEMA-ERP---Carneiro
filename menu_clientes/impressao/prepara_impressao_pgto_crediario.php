@@ -18,7 +18,7 @@ include_once("../../diversos/funcoes_diversas.php");
         		
 		$txt_cabecalho[] = '----------------------------------------';
 
-		$txt_cabecalho[] = 'COMPROVANTE DE PAGAMENTO';
+		$txt_cabecalho[] = 'COMPROVANTE DE PAGAMENTO'.$id;
 
 		$txt_cabecalho[] = '----------------------------------------';
 		 
@@ -73,61 +73,6 @@ include_once("../../diversos/funcoes_diversas.php");
 			 			  
 	//PAGAMENTOS//
 
-
-	//VALOR DEVIDO ANTES DE PAGAR//
-	$txt_total_venda='';
-	$total_pago =0;	
-	$total_debito=0;
-	$total_pgtos=0;
-	$sel = $db->select("SELECT contas_clientes.*, formas_pagamento.forma, usuarios.nome FROM contas_clientes 
-		LEFT JOIN formas_pagamento ON contas_clientes.forma_pagamento=formas_pagamento.id
-		LEFT JOIN usuarios ON contas_clientes.id_usuario=usuarios.id
-		WHERE contas_clientes.id_cliente='$id_cliente' AND contas_clientes.id!='$id'
-		ORDER BY contas_clientes.id DESC");
-		while($soma_pgto = $db->expand($sel)){
-
-			if($soma_pgto['tipo']==0){
-				
-				$total_debito = ($total_debito+$soma_pgto['valor']);
-			} else {
-				
-				$total_pgtos = ($total_pgtos+$soma_pgto['valor_recebe']);
-			}
-			
-		}    
-
-	$total_devido = ($total_debito-$total_pgtos);	
-	if($total_devido<0){$total_devido=0;}
-	$aux_valor_total = retira_acentos('VALOR DEVIDO');
-	$aux_valor_total2 = 'R$ '.number_format((($total_devido)),2,",",".");
-	$total_espacos = $n_colunas - strlen($aux_valor_total);
-	$total_espacos = $total_espacos- strlen($aux_valor_total2);
-	$espacos = ''; 
-	for($i = 0; $i < $total_espacos; $i++){
-		$espacos .= ' ';
-	}			
-	$txt_total_venda .= $aux_valor_total.$espacos.$aux_valor_total2."\r\n";	
-	$txt_total_venda .=	'----------------------------------------';			
-
-
-
-	//VALOR QUE AINDA FALTA PAGAR//
-	$txt_total_falta_pagar='';
-	$sm = ($total_devido - $dados_pgto['valor_recebe']);	
-	if($sm>=0){		  
-		$aux_valor_total = retira_acentos('RESTANTE A RECEBER');
-		$aux_valor_total2 = 'R$ '.number_format(($sm),2,",",".");
-		$total_espacos = $n_colunas - strlen($aux_valor_total);
-		$total_espacos = $total_espacos- strlen($aux_valor_total2);
-		$espacos = ''; 
-		for($i = 0; $i < $total_espacos; $i++){
-			$espacos .= ' ';
-		}			
-		$txt_total_falta_pagar .= $aux_valor_total.$espacos.$aux_valor_total2."\r\n";	
-		$txt_total_falta_pagar .=	'----------------------------------------';					
-	}
-
-
 	//NOME DO CLIENTE//	
 		$txt_nome_cliente=retira_acentos($dados_pgto['nome_cliente'])."\r\n";
 		$txt_nome_cliente.=	'----------------------------------------';					
@@ -151,10 +96,8 @@ include_once("../../diversos/funcoes_diversas.php");
 
 	///GERA O ARQUIVO	
 	$txt = implode("\r\n", $cabecalho)
-	. "\r\n"	
-	.$txt_total_venda."\r\n"
-	.$txt_pgto_recebidos."\r\n"
-	.$txt_total_falta_pagar."\r\n"
+	. "\r\n"		
+	.$txt_pgto_recebidos."\r\n"	
 	.$txt_nome_cliente."\r\n"
 	.implode("\r\n", $txt_fim)
 	.implode("\r\n", $txt_fim2);

@@ -46,6 +46,11 @@ span.span_install small{color: #3876AD; font-size: 16px; font-weight: 300}
   display: flex;
 }
 
+.tabs_internas{display: none;}
+.tabs_internas:first-child { 
+  display: flex;
+}
+
 
 h15{font-size: 14px; font-weight: 300; text-transform: uppercase; padding-top: 34px}
 h16{font-size: 19px; font-weight: 300; color: #3876AD;}

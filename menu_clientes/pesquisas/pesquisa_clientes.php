@@ -12,10 +12,12 @@ $seleciona_produtos = $db->select("SELECT id, nome FROM clientes
 if($db->rows($seleciona_produtos)) {
 	$x=1;
 	while($line = $db->expand($seleciona_produtos)){
-				
-		echo '<tr onclick="javascript:seleciona_cliente_venda_modal(\''.$line['nome'].'\','.$line['id'].');" class="passa_clientes" id="linha'.$x.'" data-id="'.$line['id'].'" data-nome="'.$line['nome'].'">';
+	
+		$name = $line['nome'];			
+
+		echo '<tr onclick="javascript:seleciona_cliente_venda_modal(\''.trim($name).'\','.$line['id'].');" class="passa_clientes" id="linha'.$x.'" data-id="'.$line['id'].'" data-nome="'.trim($line['nome']).'">';
 			echo '<td class="upper">'.$line['id'].' </td>';
-			echo '<td class="upper">'.$line['nome'].'</td>';
+			echo '<td class="upper">'.trim($line['nome']).'</td>';
 		echo '</tr>';
 		$x++;
 	}
@@ -26,6 +28,4 @@ if($db->rows($seleciona_produtos)) {
 }
 
 ?>	
-
-
 

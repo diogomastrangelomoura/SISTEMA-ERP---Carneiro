@@ -50,13 +50,16 @@ function recebe_crediario(){
 	
 
 	$("#botao_recebe_crediario").html('AGUARDE...');
-	$("#atualiza_aqui").html('<center>ATUALIZANDO...</center>');
+	$("#tab20").html('<center>ATUALIZANDO...</center>');
+	$("#tab21").html('<center>ATUALIZANDO...</center>');
 	$.post('menu_clientes/actions/salva_recebimento_crediario.php', {cliente:cliente, forma:forma, pagamento:pagamento, devido:devido}, function(resposta){			
+
 		$("#atualiza_devido").html(resposta)	
 		$("#devido").val(resposta)	
 		$("#troco").html('0.00')	
 		$("#pagamento").val('')	
-		$("#atualiza_aqui").load('menu_clientes/listagem/listagem_crediario_cliente.php?id='+cliente);
+		$("#tab20").load('menu_clientes/listagem/listagem_crediario_cliente.php?id='+cliente);
+		$("#tab21").load('menu_clientes/listagem/listagem_pagamentos_cliente.php?id='+cliente);
 		$("#botao_recebe_crediario").html('RECEBER');	
 		$("#pagamento").focus();
 		imprime_comprovante_venda();

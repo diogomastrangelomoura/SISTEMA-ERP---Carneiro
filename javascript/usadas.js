@@ -6,6 +6,12 @@ $(".muda_tabs").click(function(){
 	$("#tab"+target).css('display', 'flex');
 });
 
+$(".muda_tabs_internas").click(function(){
+	var target = $(this).attr('data-id');			
+	$(".tabs_internas").css('display', 'none');
+	$("#tab"+target).css('display', 'flex');
+});
+
 $(".valores").maskMoney({
         symbol:'', // Simbolo
         decimal:'.', // Separador do decimal
