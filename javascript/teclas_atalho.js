@@ -21,6 +21,11 @@ $(document).ready(function(){
           esc_pula_fiscal=0;
         }
 
+        if(typeof sim_imprime_venda != "undefined" && nao_imprime_venda==1){
+          cancela_impressao_comprovante_venda();
+          nao_imprime_venda=0;
+        }
+
       }   
 
       //TECLA F2//
@@ -89,6 +94,14 @@ $(document).ready(function(){
         if(typeof sim_imprime_venda != "undefined" && sim_imprime_venda==1){          
           imprime_comprovante_venda();         
           sim_imprime_venda=0;
+        }
+
+
+        //OK VENDA FISCAL AVANÇA
+        if(typeof global_cpf_cliente != "undefined" && global_cpf_cliente==1){    
+        
+          finaliza_venda(1);
+          global_cpf_cliente=0;
         }
 
       }         

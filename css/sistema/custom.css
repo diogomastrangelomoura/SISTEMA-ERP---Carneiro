@@ -1,7 +1,7 @@
 body{overflow-x: hidden; }
 #resumo-pedido-comanda{height: calc(100vh - 170px); max-height: calc(100vh - 170px); border-top: 0; font-weight: 300; line-height: 24px}
 
-
+#cupom_fiscal_avisos i{font-size: 50px}
 
 .icones-campo i{position: absolute; font-size: 30px; top: 10px; left: 28px}
 .icones-campo2 i{position: absolute; font-size: 20px; top: 14px; left: 20px}

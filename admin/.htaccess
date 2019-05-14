@@ -30,7 +30,7 @@
 	
 
 	RewriteRule ^produtos?$ views/menu_cadastros/produtos.php [L,QSA]
-	RewriteRule ^produtos-categoria/(.*)?$ views/menu_cadastros/produtos-categoria.php?id=$1 [L,QSA]	
+	RewriteRule ^produtos-categoria/(.*)?$ views/menu_cadastros/produtos.php?categoria=$1&pesquisa=1 [L,QSA]	
 	
 	RewriteRule ^atendentes?$ views/menu_cadastros/atendentes.php [L,QSA]
 	RewriteRule ^adicionais?$ views/menu_cadastros/adicionais.php [L,QSA]

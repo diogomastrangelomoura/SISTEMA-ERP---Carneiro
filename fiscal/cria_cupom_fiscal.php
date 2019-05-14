@@ -3,7 +3,6 @@ require("../admin/class/class.db.php");
 require("../admin/class/class.seguranca.php");
 require("../includes/verifica_dados_loja.php");
 require("../includes/verifica_dados_fiscais.php");
-require("../includes/verifica_venda_aberta.php");
 require("../diversos/funcoes_impressao.php");
 require("../diversos/funcoes_diversas.php");
 
@@ -12,6 +11,10 @@ $caminho_acbr=$dados_fiscais['caminho_acbr'];
 
 @unlink("$caminho_acbr\sai.txt");
 @unlink("$caminho_acbr\cupom.ini");
+
+
+$samba = $db->select("SELECT * FROM vendas WHERE id='$id_venda' LIMIT 1");
+$dados_venda = $db->expand($samba);
 
 	
 ///CRIA O ARQUIVO INI PARA ENVIAR AO SAT///
@@ -52,38 +55,10 @@ if($db->rows($sql)){
 
 		$id_produto = $row['id_produtos'];
 
-		//APENAS UM PRODUTO
-		if(is_numeric($row['id_produtos'])){
-
-			$pg = $db->select("SELECT produto, categoria FROM lanches WHERE id='$id_produto' LIMIT 1");
-			$var = $db->expand($pg);			
-			$nome_produto= $var['produto'];
-			$categoria_produto=$var['categoria'];
-
-		//MEIO A MEIO	
-		} else {	
-
-			$nome_produto='';
-			$prods = explode(',', $row['id_produtos']);	
-			foreach($prods as $prod) {
-
-		    	$id_produto = trim($prod);		    	
-
-		    	$pg = $db->select("SELECT produto, categoria FROM lanches WHERE id='$id_produto' LIMIT 1");
-				$var = $db->expand($pg);				
-
-				$nome_produto= $nome_produto.$var['produto'].'/';
-				$categoria_produto=$var['categoria'];
-			}
-		}	
-
-		//REMOVE A ULTIMA BARRA
-		$final = substr($nome_produto, -1);
-		if($final=='/'){
-			$size = strlen($nome_produto);
-			$nome_produto = substr($nome_produto,0, $size-1);
-		}
-
+		$pg = $db->select("SELECT produto, categoria FROM produtos WHERE id='$id_produto' LIMIT 1");
+		$var = $db->expand($pg);			
+		$nome_produto= $var['produto'];
+		$categoria_produto=$var['categoria'];
 
 
 
@@ -130,38 +105,7 @@ CST='.impostos_fiscais_produto('cst',$id_produto,$categoria_produto);
 }		
 
 
-//TAXA DE ENTREGA////
-if($dados_venda['valor_entrega']!='0.00'){
-	
-$ecf.= '
 
-[Produto00'.$x.']
-cProd=0				
-xProd=TAXA DE ENTREGA
-NCM=00
-CFOP=5102
-uCom=UN
-qCom=1.00				
-vUnCom='.$dados_venda['valor_entrega'].'				
-indRegra=A';
-
-$ecf.= '
-
-[ICMS00'.$x.']
-Orig=0
-CSOSN=102';
-
-$ecf.= '
-
-[PIS00'.$x.']
-CST=49';
-
-$ecf.= '
-
-[COFINS00'.$x.']
-CST=49';
-
-}
 
 
 //IMPOSTO TRANSPARENCIA
@@ -171,10 +115,6 @@ $ecf.= '
 [Total]
 vCFeLei12741='.$imposto_transparencia;	
 }
-
-
-
-
 
 //DESCONTOS////
 if($dados_venda['valor_desconto']!='0.00'){
@@ -208,6 +148,8 @@ if($db->rows($sql)){
 		//DINHEIRO
 		if($row['forma_pagamento']==1){$pgto ='01';}
 		if($row['forma_pagamento']==2){$pgto ='03';}
+		if($row['forma_pagamento']==3){$pgto ='05';}
+		if($row['forma_pagamento']==4){$pgto ='02';}
 
 $ecf.= '
 
@@ -224,7 +166,7 @@ vMP='.$row['valor_pagamento'];
 $ecf.= '
 
 [DadosAdicionais]
-infCpl=Sis E-Food Sistemas
+infCpl=SisConnection ERP Sistemas Integrados
 ';
 	
 

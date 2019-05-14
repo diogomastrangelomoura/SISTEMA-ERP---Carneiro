@@ -20,7 +20,7 @@ $total = new TotalizadoresVendas();
               <div id="chartArea1" class="dash-chartist"></div>
               <div class="dash-item-overlay">
                 <h1><span class="tx-24">R$</span> <?php echo $total->Movimentacao('ultima_valores'); ?> </h1>
-                <p class="earning-label">TOTAL DE VENDAS DO DIA 
+                <p class="earning-label">TOTAL DE VENDAS DO DIA DE HOJE 
                   <?php
                       echo $total->Movimentacao('ultima');
                   ?>                    

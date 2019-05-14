@@ -27,14 +27,14 @@
 
     <script src="js/jquery.maskMoney.js"></script>
     <script src="js/mascara.js"></script>
-    <script src="javascript/usadas.js"></script>
+    <script src="javascript/usadas.js?<?php echo time(); ?>"></script>
     <script src="javascript/menus.js?<?php echo time(); ?>"></script>
     <script src="javascript/pedidos.js?<?php echo time(); ?>"></script>
-    <script src="javascript/caixa.js"></script>
-    <script src="javascript/clientes.js"></script>
-    <script src="javascript/impressao.js"></script>
+    <script src="javascript/caixa.js?<?php echo time(); ?>"></script>
+    <script src="javascript/clientes.js?<?php echo time(); ?>"></script>
+    <script src="javascript/impressao.js?<?php echo time(); ?>"></script>
     <script src="javascript/teclas_atalho.js?<?php echo time(); ?>"></script>
-    <script src="javascript/fiscal.js"></script>
+    <script src="javascript/fiscal.js?<?php echo time(); ?>"></script>
 
 
 

@@ -9,7 +9,8 @@ require("../includes/verifica_dados_fiscais.php");
 
 	////REIMPRESSAO DE CUPOM/////
 	if(isset($venda_pesquisa) && $venda_pesquisa!=0){
-		require("../includes/verifica_venda_aberta.php");		
+		$samba = $db->select("SELECT * FROM vendas WHERE id='$venda_pesquisa' LIMIT 1");
+		$dados_venda = $db->expand($samba);	
 		$arquivo_imprimir = $dados_venda['xml_fiscal'];
 	}
 	
@@ -35,7 +36,7 @@ require("../includes/verifica_dados_fiscais.php");
 			$ponteiro = fopen ("$caminho_acbr\sai.txt","r");
 			$linha = trim(fgets($ponteiro));		
 
-	
+			echo 1;
 
 			fclose($ponteiro);	
 			@unlink("$caminho_acbr\sai.txt");	

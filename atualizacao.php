@@ -6,6 +6,7 @@
 	//CRIA CAMPOS//
 	$sql = $db->select("ALTER TABLE produtos ADD estoque_minimo INT(10) NOT NULL",0);
 	$sql = $db->select("ALTER TABLE contas_clientes ADD parcelas INT(10) NOT NULL",0);
+	$sql = $db->select("ALTER TABLE arquivos_imprimir ADD usuario INT(10) NOT NULL",0);
 	
 
 

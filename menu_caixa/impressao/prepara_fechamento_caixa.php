@@ -50,7 +50,7 @@ require("../../menu_caixa/actions/totalizadores_caixa.php");
 
 
 		$aux_valor_total = 'CHEQUE:';
-		$aux_valor_total2 = 'R$ '.number_format(devolve_valores_caixa($id_caixa,2),2,".",",").' (+)';
+		$aux_valor_total2 = 'R$ '.number_format(devolve_valores_caixa($id_caixa,4),2,".",",").' (+)';
 		$total_espacos = $n_colunas - strlen($aux_valor_total);
 		$total_espacos = $total_espacos- strlen($aux_valor_total2);
 		$espacos = ''; 

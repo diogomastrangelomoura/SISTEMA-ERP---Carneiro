@@ -74,13 +74,8 @@
                   <a href="javascript:void(0);">PRODUTOS</a>
                   <ul>                    
                     <li><a href="novo-produto">NOVO PRODUTO</a></li>            
-                    <li><a href="produtos">LISTAR TODOS</a></li>                                        
-                    <?php
-                    	$sel = $db->select("SELECT id, categoria FROM categorias WHERE ativo='1' ORDER BY categoria");
-                    	while($row = $db->expand($sel)){
-                    		echo '<li><a href="produtos-categoria/'.$row['id'].'" class="upper">LISTAR '.$row['categoria'].'</a></li>';
-                    	}
-                    ?>
+                    <li><a href="produtos">LISTAGEM GERAL</a></li>                                        
+                    
                   </ul>
                 </li>
 
@@ -122,7 +117,7 @@
                   <a href="javascript:void(0);">VENDAS</a>
                   <ul>
                     <li><a href="relatorio-real">CONSOLIDADO REAL</a></li>
-                    <li><a href="relatorio-bruto">CONSOLIDADO BRUTO</a></li>                                        
+                    
                   </ul>
                 </li> 
                                

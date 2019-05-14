@@ -23,10 +23,12 @@
             <div class="sub-item">
               <ul>                
                 <li><a href="home"  tabindex="-1">NOVA VENDA</a></li>
+
+                <?php if($id_caixa_aberto!=0){ ?>
                 <li><a href="javascript:void(0)" onclick="javascript:menu_cadastro_clientes();" tabindex="-1">CADASTRO DE CLIENTES</a></li>
 
                 <li><a href="javascript:void(0)" onclick="javascript:menu_orcamentos();" tabindex="-1">ORÇAMENTOS</a></li>
-                                                            
+                <?php } ?>                                              
               </ul>
             </div><!-- dropdown-menu -->
           </li>
@@ -55,10 +57,12 @@
             </a>
             <div class="sub-item">
               <ul>
-                
+                <?php if($id_caixa_aberto!=0){ ?>
                 <li><a href="javascript:void(0)" onclick="javascript:menu_saidas_caixa();" tabindex="-1">RETIRADAS DE CAIXA</a></li>  
 
                 <li><a href="javascript:void(0)" onclick="javascript:confirma_fecha_caixa();"  tabindex="-1"><i class="icon icofont-checked"></i>&nbsp;&nbsp;ENCERRAR CAIXA</a></li>                
+
+              <?php } ?>
                 <li><a href="logout" tabindex="-1"><i class="icon ion-forward"></i>&nbsp;&nbsp;LOGOUT</a></li>                
               </ul>
             </div><!-- dropdown-menu -->

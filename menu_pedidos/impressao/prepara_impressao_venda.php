@@ -346,7 +346,7 @@ include_once("../../diversos/funcoes_diversas.php");
    
    $file = '../../z_imprimir/'.$arquivo;
 
-   $insere = $db->select("INSERT INTO arquivos_imprimir (arquivo, tipo) VALUES ('$arquivo', '$tipo')");
+   $insere = $db->select("INSERT INTO arquivos_imprimir (arquivo, tipo, usuario) VALUES ('$arquivo', '$tipo', '$id_usuario')");
 
    // cria o arquivo
    $_file  = fopen($file,"w");

@@ -153,7 +153,15 @@ if(isset($id)){
 	        		   <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">NCM</label>
-                            <input type="number" onblur="javascript:valida_ncm(this.value);"   class="form-control" name="ncm" value="<?php if($edit==1){ echo $ln['ncm'];} ?>">  
+
+                            <div class="input-group">                              
+                              <input type="number" onblur="javascript:valida_ncm(this.value);"   class="form-control" name="ncm" value="<?php if($edit==1){ echo $ln['ncm'];} ?>">  
+                              <span class="input-group-btn">
+                                <button class="btn btn-primary" tabindex="-1" onclick="javascript:tabela_ncm();" type="button"><i class="icofont-search-1"></i></button>
+                            </span> 
+                            </div>
+
+                            
                             <small id="esconde_frase">*Apenas em caso fiscal</small>
                             <small id="ncm_erro" class="hide red"><b>NCM NÃO ENCONTRADO</b></small>  
                         </div>

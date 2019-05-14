@@ -30,13 +30,21 @@ function finaliza_venda(fiscal=0){
 	var url = $("#FormFinalizaVenda").attr('action')
 	carregando('FINALIZANDO, AGUARDE...');
 	
-	$.ajax({type: "POST", url:url, data:formdata, success: function(msg){										
+	$.ajax({type: "POST", url:url, data:formdata, success: function(venda_final){										
 
 		
 		if(fiscal==0){
+
+
 			sim_imprime_venda=1;
+			nao_imprime_venda=1;
 			$("#ModalPerguntaImprime01").modal();			
 			inicia_sistema();
+		} else {
+
+			
+			venda_fiscal(venda_final);
+
 		}
 
 	} 		
@@ -78,9 +86,10 @@ function confirma_finaliza_venda(){
 	}
 
 	if(tipo_venda==1){
+		global_cpf_cliente=1;
 		esc_pula_fiscal=1;
-		$("#ModalCupomFiscal").modal();
-	} else {
+		exibe_avisos_fiscais();
+	} else {		
 		esc_pula_fiscal=0;
 		finaliza_venda(0);
 	}

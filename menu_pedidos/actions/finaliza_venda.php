@@ -119,6 +119,6 @@ if($tipo_venda==1){
 $id_venda = $id_final;
 require_once ("../impressao/prepara_impressao_venda.php");
 
-//echo $id_final;	
+echo $id_final;	
 
 ?>

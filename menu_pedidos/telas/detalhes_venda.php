@@ -46,8 +46,11 @@ $dados_vendedor = $db->expand($sql);
 					
 					<hr style="margin-top: 0px">
 					
+					<div class="row">
 
-						<div class="col-md-12">
+						<div class="col-md-6">
+							<div class="col-md-12">
+						  
 						  <label class="section-label-md">DATA/HORA:</label>
 	                      <span class="upper" style="color: #000">
 	                      <?php 
@@ -55,15 +58,7 @@ $dados_vendedor = $db->expand($sql);
 	                      ?>
 	                      </span>  
 
-	                      <a tabindex="-1" href="javascript:void(0);" onclick="javascript:reimprime_venda(<?php echo $id; ?>)" class="thin">
-		          							<button tabindex="-1" class="btn btn-primary btn-sm pull-right">
-		          								<i class="icofont-print"></i> REIMPRIMIR VENDA
-		          							</button>
-		          		  </a>
-
-	                    </div>
-
-	                    <div class="col-md-12">
+	                    <br>	
 	                      <label class="section-label-md">CLIENTE:</label>
 	                      <span class="upper" style="color: #000">
 	                      <?php 
@@ -74,11 +69,7 @@ $dados_vendedor = $db->expand($sql);
 	                        } 
 	                      ?>
 	                      </span> 
-	                                 
-	                     </div>   
-
-
-	                      <div class="col-md-12">
+	                    <br>	
 	                      <label class="section-label-md">VENDEDOR:</label>
 	                      <span class="upper" style="color: #000">
 	                      <?php 
@@ -89,10 +80,47 @@ $dados_vendedor = $db->expand($sql);
 	                        } 
 	                      ?>
 	                      </span> 
-	                      <hr>             
-	                     </div>        
+	                    	
+	                    	 </div>     
+	                     </div>   
+
+	                     <div class="col-md-6">
+	                     	<div class="col-md-12">
+
+	                    	<a tabindex="-1" href="javascript:void(0);" onclick="javascript:reimprime_venda(<?php echo $id; ?>)" class="thin">
+		          							<button tabindex="-1" class="btn btn-primary btn-sm pull-right">
+		          								<i class="icofont-print"></i> REIMPRIMIR VENDA
+		          							</button>
+		          		  	</a>
+
+
+			          		  <?php if($dados_venda['venda_fiscal']==1){ ?>
+				          		  <a tabindex="-1" href="javascript:void(0);" onclick="javascript:reeimprimi_venda_fiscal(<?php echo $id; ?>)" class="thin" >
+				          							<button tabindex="-1" class="btn btn-warning btn-sm pull-right top10">
+				          								<i class="icofont-print"></i> REIMPRIMIR SAT FISCAL
+				          							</button>
+				          		  </a>
+			          		  <?php } else { ?>
+
+			          		  	  <a tabindex="-1" href="javascript:void(0);" onclick="javascript:EnviaVendaFiscalPosterior(<?php echo $id; ?>)" class="thin" >
+				          							<button tabindex="-1" class="btn btn-danger btn-sm pull-right top10">
+				          								<i class="icofont-print"></i> ENVIAR SAT FISCAL
+				          							</button>
+				          		  </a>
+
+
+			          		  <?php }  ?>	
+			          		</div>		  
+	                    </div>	
+
+	                </div>      
+
+
+
+
 
 	                     <div class="col-md-12">
+	                     	<hr>
 			                <div class="table-responsive mg-t-10">
 			                  <table class="table table-invoice" style="border:0">
 			                    

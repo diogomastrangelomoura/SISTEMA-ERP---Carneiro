@@ -171,9 +171,7 @@ if(isset($pesquisa)){
             </div>
           </div>
 
-<?php											
-} 	
-?>
+
 
 
 
@@ -261,5 +259,10 @@ if(isset($pesquisa)){
           </div>
 
 </div>
+
+
+<?php                     
+}   
+?>
 
 <?php require("../../includes/rodape.php"); ?>

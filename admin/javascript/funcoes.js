@@ -1,5 +1,16 @@
 // JavaScript Document
 
+function pesquisa_ncm_tabela_externa(valor){
+	$("#pesquisax3").html("<br><center>CARREGANDO...</center><br>");
+	$.post('views/menu_cadastros/listagem/listagem_ncm.php', {busca:valor}, function(resposta){			
+		$("#pesquisax3").html(resposta);
+	});					
+}
+
+function tabela_ncm(){
+	window.open("views/menu_cadastros/listagem/tabela_ncm.php", "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=30,left=500,width=650,height=600");			
+}
+
 function carrega_produtos(id){
 	$("#produto").html('<option value="">CARREGANDO</option>');
 	$.post('ajax/pega_produtos.php', {categoria:id}, function(resposta){			

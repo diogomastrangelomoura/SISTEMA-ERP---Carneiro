@@ -37,17 +37,20 @@ class TotalizadoresVendas{
 		$db= new DB();
 
 		if($tipo=='ultima'){
-			$sql = $db->select("SELECT data_abertura FROM caixa ORDER BY id DESC LIMIT 1");
-			$result = $db->expand($sql);
-			return data_mysql_para_user($result['data_abertura']);	
+			///$sql = $db->select("SELECT data_abertura FROM caixa ORDER BY id DESC LIMIT 1");
+			//$result = $db->expand($sql);
+			return date("d/m/Y");
+			//return data_mysql_para_user($result['data_abertura']);	
 		}
 
 		if($tipo=='ultima_valores'){
-			$sql = $db->select("SELECT id FROM caixa ORDER BY id DESC LIMIT 1");
-			$result = $db->expand($sql);
-			$id_caixa = $result['id'];
+			//$sql = $db->select("SELECT id FROM caixa ORDER BY id DESC LIMIT 1");
+			//$result = $db->expand($sql);
+			//$id_caixa = $result['id'];
 
-			$sql = $db->select("SELECT SUM(valor_final_venda) AS valor_final FROM vendas WHERE id_caixa='$id_caixa'");
+			//$sql = $db->select("SELECT SUM(valor_final_venda) AS valor_final FROM vendas WHERE id_caixa='$id_caixa'");
+			$now = date("Y-m-d");
+			$sql = $db->select("SELECT SUM(valor_final_venda) AS valor_final FROM vendas WHERE data='$now'");
 			$result = $db->expand($sql);
 			return number_format($result['valor_final'],2,",",".");	
 		}

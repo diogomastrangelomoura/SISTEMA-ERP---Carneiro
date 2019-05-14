@@ -9,6 +9,23 @@ function aviso_impressao(aviso){
 	}
 }
 
+
+function cancela_impressao_comprovante_venda(){
+	$("#ModalPerguntaImprime01").modal('hide');		
+	nao_imprime_venda=0;	
+	$.post('menu_pedidos/impressao/cancela_impressao.php',{id:1}, function(resposta){	
+
+	});
+}
+
+
+function cancela_impressao_comprovante_venda(){
+	$("#ModalPerguntaImprime01").modal('hide');
+
+	$.post('menu_pedidos/impressao/verifica_arquivo_impressao.php',{cancela:1}, function(resposta){});
+
+}
+
 function imprime_comprovante_venda(){	
 	
 	$("#ModalPerguntaImprime01").modal('hide');

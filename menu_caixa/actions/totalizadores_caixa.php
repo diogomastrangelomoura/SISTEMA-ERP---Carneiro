@@ -41,7 +41,7 @@ function devolve_valores_caixa($id_caixa_aberto,$tipo){
 							$totais_cartao = ($totais_cartao+$row2['valor_pagamento']);
 						}
 
-						//CARTÃO
+						//CHEQUE
 						if($row2['forma_pagamento']==4){
 							$totais_cheque = ($totais_cheque+$row2['valor_pagamento']);
 						}

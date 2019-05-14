@@ -24,22 +24,19 @@ if($db->rows($sel_cx)){
 }
 
 
-
-
 $aviso_caixa_antigo=0;
-$hoje = date("Y-m-d");
-$sel = $db->select("SELECT data_abertura, hora_abertura FROM caixa WHERE data_fechamento='0000-00-00' ORDER BY id DESC LIMIT 1");
-if($db->rows($sel)){
-	$dados_caixa=$db->expand($sel);       
-    if($dados_caixa['data_abertura']==$hoje){
-    	$aviso_caixa_antigo=0;
-    } else {
-    	$aviso_caixa_antigo=1;
+if($id_caixa_aberto!=0){
+    if($dados_caixa_aberto['data_abertura']<date("Y-m-d")){
+        $aviso_caixa_antigo=1;        
     }
-} else {
-    $dados_caixa['data_abertura']='---';
-    $dados_caixa['hora_abertura']='---';
-}  
-    
+} 
+
+
+
+if($aviso_caixa_antigo==1){
+    echo '<div class="alert alert-danger text-center" style="margin-bottom:0; border:0">';
+        echo '<i class="icofont-warning"></i> ATENÇÃO VOCÊ ESTÁ TRABALHANDO COM O CAIXA ANTIGO DO DIA: '.data_mysql_para_user($dados_caixa_aberto['data_abertura']); 
+    echo '</div>';
+}
 
 ?>

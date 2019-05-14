@@ -2,7 +2,6 @@
 require("../admin/class/class.db.php");
 require("../admin/class/class.seguranca.php");
 require("../includes/verifica_dados_fiscais.php");
-require("../includes/verifica_venda_aberta.php");
 
 	
 
@@ -66,8 +65,8 @@ require("../includes/verifica_venda_aberta.php");
 
 					//GRAVA NO BANCO//
 					$arquivo_xml = trim($ex[1]);
-					$arquivo_xml = str_replace("\\", '/', $arquivo_xml);
-					$grava = $db->select("UPDATE aguarda_venda SET venda_fiscal='1', xml_fiscal='$arquivo_xml' WHERE id='$id_venda' LIMIT 1");
+					$arquivo_xml = trim(str_replace("\\", '/', $arquivo_xml));
+					$update = $db->select("UPDATE vendas SET venda_fiscal='1', xml_fiscal='$arquivo_xml' WHERE id='$id_venda' LIMIT 1");
 
 					echo '1'.'&@&'.trim($ex[1]);	
 

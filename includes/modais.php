@@ -22,7 +22,7 @@
 
 
 
-<div id="ModalCupomFiscal" class="modal fade" tabindex="-1" data-keyboard="false" data-backdrop="static">
+<div id="ModalCupomFiscal" class="modal fade" tabindex="-1"  data-backdrop="static">
   <div class="modal-dialog modal-md">
 
     <!-- Modal content-->
@@ -30,7 +30,7 @@
       
       <div class="modal-header">        
         <h4 class="modal-title">Cupom Fiscal</h4>
-       
+        
       </div>
       
         <div class="modal-body pd-20 text-center" style="text-transform: uppercase;">
@@ -41,7 +41,7 @@
                 <label>INFORMAR CPF:</label>           
                 <input type="number" autocomplete="off" style="width: 330px; " name="cpf_cliente" id="cpf_cliente" class="form-control input-lg" placeholder="CPF CLIENTE">
                 
-                <button type="button" onclick="javascript:finaliza_venda(0);" class="btn btn-block btn-lg  btn-primary top10">CONTINUAR</button>
+                <button type="button" onclick="javascript:finaliza_venda(1);" class="btn btn-block btn-lg  btn-primary top10">CONTINUAR</button>
 
             </div> 
 
@@ -59,37 +59,12 @@
 
 
 
-<div id="ModalRejeicaoPedidoInternet" class="modal fade" role="dialog" tabindex="-1">
-  <div class="modal-dialog modal-lg">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      
-      <div class="modal-header">        
-        <h4 class="modal-title">Motivo da Rejeição</h4>
-        <button type="button" class="close" data-dismiss="modal" tabindex="-1">&times;</button>
-      </div>
-        
-        <form method="post" id="FormRejeitaPedidoInternet" action="menu_internet/actions/aceita-rejeita-pedido.php">      
-        <div class="modal-body" id="motivo_rejeicao_pedido_internet_conteudo">
-          
-            <div class="form-group">
-                <input type="hidden" name="status" value="3">
-                <input type="hidden" name="id" id="id_pedido_rejeicao">
-                <textarea name="motivo_erro_internet" id="motivo_erro_internet" class="form-control" style="height: 120px" placeholder="Informe o motivo da rejeição do pedido"></textarea>
-            </div>  
-          
-        </div>
 
-        <div class="modal-footer">
-          <button type="submit" class="btn  btn-danger" id="botao_rejeita_pedido_modal">REJEITAR</button>
-      </div>  
-      </form>
-      
-    </div>
 
-  </div>
-</div>
+
+
+
 
 
 <div id="ModalProcuraItensCaixa" class="modal fade" role="dialog" tabindex="-1">
@@ -241,18 +216,19 @@
       
       <div class="modal-header">        
         <h4 class="modal-title"><center>Impressão</center></h4>
-        <button type="button" class="close" data-dismiss="modal" tabindex="-1" style="display: none;">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" tabindex="-1" >&times;</button>
       </div>
       
         <div class="modal-body" style="min-width: 300px">
           <div class="row">
 
             <div class="col-md-12">               
-                    <button onclick="javascript:imprime_comprovante_venda();" class="btn btn-lg btn-success btn-block  grandao">SIM</button>               
+                    <button onclick="javascript:imprime_comprovante_venda();" tabindex="-1" class="btn btn-lg btn-success btn-block  grandao">SIM</button>               
             </div> 
 
-            <div class="col-md-12 top15" style="display: none;">                
-                    <button data-dismiss="modal" tabindex="-1" class="btn btn-danger btn-lg btn-block  grandao">NÃO</button>                
+
+            <div class="col-md-12 top15" >                
+                    <button onclick="javascript:cancela_impressao_comprovante_venda();" tabindex="-1" class="btn btn-danger btn-lg btn-block  grandao">NÃO</button>                
             </div> 
 
           </div>           
